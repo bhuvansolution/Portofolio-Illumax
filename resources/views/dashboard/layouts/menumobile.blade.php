@@ -28,15 +28,9 @@
                 </a>
                 <ul class="">
                     <li>
-                        <a href="/dashboard/info" class="menu">
-                            <div class="menu__icon"> <i data-lucide="file-text"></i> </div>
-                            <div class="menu__title"> Info</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/dashboard/clients" class="menu">
-                            <div class="menu__icon"> <i data-lucide="monitor"></i> </div>
-                            <div class="menu__title"> Client</div>
+                        <a href="/dashboard/aboutus" class="menu">
+                            <div class="menu__icon"> <i data-lucide="home"></i> </div>
+                            <div class="menu__title">About Us</div>
                         </a>
                     </li>
                     <li>
@@ -46,17 +40,27 @@
                         </a>
                     </li>
                     <li>
+                        <a href="/dashboard/our-partner" class="menu">
+                            <div class="menu__icon"> <i data-lucide="monitor"></i> </div>
+                            <div class="menu__title">Our Partner</div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/dashboard/info" class="menu">
+                            <div class="menu__icon"> <i data-lucide="file-text"></i> </div>
+                            <div class="menu__title"> Info</div>
+                        </a>
+                    </li>
+
+
+                    <li>
                         <a href="/dashboard/whychoose" class="menu">
                             <div class="menu__icon"> <i data-lucide="book"></i> </div>
                             <div class="menu__title"> Why Choose</div>
                         </a>
                     </li>
-                    <li>
-                        <a href="/dashboard/aboutus" class="menu">
-                            <div class="menu__icon"> <i data-lucide="home"></i> </div>
-                            <div class="menu__title">About Us</div>
-                        </a>
-                    </li>
+
                 </ul>
             </li>
             <li>

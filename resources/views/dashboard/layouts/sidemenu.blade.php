@@ -16,7 +16,7 @@
         <li class="side-nav__devider my-6"></li>
         <li>
             <a href="javascript:;"
-                class="side-menu {{ Request::is('dashboard/aboutus*', 'dashboard/client*', 'dashboard/contact*', 'dashboard/whychoose*') ? 'side-menu--active' : '' }}">
+                class="side-menu {{ Request::is('dashboard/aboutus*', 'dashboard/our-partner*', 'dashboard/contact*', 'dashboard/whychoose*') ? 'side-menu--active' : '' }}">
                 <div class="side-menu__icon"> <i data-lucide="layers"></i> </div>
                 <div class="side-menu__title">
                     Menu Home
@@ -31,23 +31,19 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/dashboard/info" class="side-menu">
-                        <div class="side-menu__icon"> <i data-lucide="file-text"></i> </div>
-                        <div class="side-menu__title">Info</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/dashboard/clients" class="side-menu">
-                        <div class="side-menu__icon"> <i data-lucide="monitor"></i> </div>
-                        <div class="side-menu__title"> Client</div>
-                    </a>
-                </li>
-                <li>
                     <a href="/dashboard/contact" class="side-menu">
                         <div class="side-menu__icon"> <i data-lucide="phone-call"></i> </div>
                         <div class="side-menu__title">Contact</div>
                     </a>
                 </li>
+                <li>
+                    <a href="/dashboard/our-partner" class="side-menu">
+                        <div class="side-menu__icon"> <i data-lucide="monitor"></i> </div>
+                        <div class="side-menu__title">Our Partner</div>
+                    </a>
+                </li>
+
+
                 <li>
                     <a href="/dashboard/whychoose" class="side-menu">
                         <div class="side-menu__icon"> <i data-lucide="book"></i> </div>
