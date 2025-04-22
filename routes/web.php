@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutusController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GalleryController;
 use Illuminate\Support\Facades\Route;
@@ -23,5 +24,6 @@ Route::get('/', function () {
 Route::prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index']);
     Route::resource('/aboutus', AboutusController::class);
+    Route::resource('/contact', ContactController::class);
     Route::resource('/gallery', GalleryController::class);
 });

@@ -20,38 +20,6 @@ class AboutusController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Aboutus $aboutus)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Aboutus $aboutus)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      */
     public function update(Request $request,  $id)
@@ -129,13 +97,5 @@ class AboutusController extends Controller
         } catch (\Exception $e) {
             return redirect('/dashboard/aboutus')->with('error', 'Terjadi kesalahan, Silahkan coba lagi.');
         }
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Aboutus $aboutus)
-    {
-        //
     }
 }
