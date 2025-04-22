@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AboutusController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GalleryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('dashboard')->group(function () {
+    Route::get('/', [DashboardController::class, 'index']);
+    Route::resource('/aboutus', AboutusController::class);
+    Route::resource('/gallery', GalleryController::class);
 });
