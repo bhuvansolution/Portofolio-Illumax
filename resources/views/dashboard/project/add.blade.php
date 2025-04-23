@@ -10,7 +10,7 @@
                             class="w-5 h-5 text-slate-500"></i> </a>
                 </div>
             </div> <!-- END: Modal Header -->
-            <form action="/dashboard/our-partner" method="post" enctype="multipart/form-data">
+            <form action="/dashboard/our-project" method="post" enctype="multipart/form-data">
                 @csrf
                 <!-- BEGIN: Modal Body -->
                 <div class="modal-body grid grid-cols-12 gap-4 gap-y-3">

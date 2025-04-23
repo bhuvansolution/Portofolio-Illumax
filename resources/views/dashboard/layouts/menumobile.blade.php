@@ -55,6 +55,12 @@
                 </ul>
             </li>
             <li>
+                <a href="/dashboard/our-portofolio" class="menu">
+                    <div class="menu__icon"> <i data-lucide="folder"></i> </div>
+                    <div class="menu__title"> Portofolio </div>
+                </a>
+            </li>
+            <li>
                 <a href="/dashboard/gallery" class="menu">
                     <div class="menu__icon"> <i data-lucide="image"></i> </div>
                     <div class="menu__title"> Gallery </div>
