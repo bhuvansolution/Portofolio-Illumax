@@ -45,40 +45,19 @@
                             <div class="menu__title">Our Partner</div>
                         </a>
                     </li>
-
                     <li>
-                        <a href="/dashboard/info" class="menu">
-                            <div class="menu__icon"> <i data-lucide="file-text"></i> </div>
-                            <div class="menu__title"> Info</div>
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="/dashboard/whychoose" class="menu">
-                            <div class="menu__icon"> <i data-lucide="book"></i> </div>
-                            <div class="menu__title"> Why Choose</div>
+                        <a href="/dashboard/our-project" class="menu">
+                            <div class="menu__icon"> <i data-lucide="monitor"></i> </div>
+                            <div class="menu__title">Our Project</div>
                         </a>
                     </li>
 
                 </ul>
             </li>
             <li>
-                <a href="/dashboard/product" class="menu">
-                    <div class="menu__icon"> <i data-lucide="shopping-cart"></i> </div>
-                    <div class="menu__title"> Product </div>
-                </a>
-            </li>
-            <li>
-                <a href="/dashboard/category" class="menu">
-                    <div class="menu__icon"> <i data-lucide="layers"></i> </div>
-                    <div class="menu__title"> Category </div>
-                </a>
-            </li>
-            <li>
-                <a href="/dashboard/file-manager" class="menu">
-                    <div class="menu__icon"> <i data-lucide="folder"></i> </div>
-                    <div class="menu__title"> File Manager </div>
+                <a href="/dashboard/gallery" class="menu">
+                    <div class="menu__icon"> <i data-lucide="image"></i> </div>
+                    <div class="menu__title"> Gallery </div>
                 </a>
             </li>
 

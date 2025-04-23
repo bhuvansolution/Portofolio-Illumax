@@ -16,7 +16,7 @@
         <li class="side-nav__devider my-6"></li>
         <li>
             <a href="javascript:;"
-                class="side-menu {{ Request::is('dashboard/aboutus*', 'dashboard/our-partner*', 'dashboard/contact*', 'dashboard/whychoose*') ? 'side-menu--active' : '' }}">
+                class="side-menu {{ Request::is('dashboard/aboutus*', 'dashboard/our-partner*', 'dashboard/contact*', 'dashboard/our-project*') ? 'side-menu--active' : '' }}">
                 <div class="side-menu__icon"> <i data-lucide="layers"></i> </div>
                 <div class="side-menu__title">
                     Menu Home
@@ -42,12 +42,10 @@
                         <div class="side-menu__title">Our Partner</div>
                     </a>
                 </li>
-
-
                 <li>
-                    <a href="/dashboard/whychoose" class="side-menu">
-                        <div class="side-menu__icon"> <i data-lucide="book"></i> </div>
-                        <div class="side-menu__title">Why Choose</div>
+                    <a href="/dashboard/our-project" class="side-menu">
+                        <div class="side-menu__icon"> <i data-lucide="monitor"></i> </div>
+                        <div class="side-menu__title">Our Project</div>
                     </a>
                 </li>
 
