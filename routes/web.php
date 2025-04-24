@@ -7,6 +7,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\OurPartnerController;
 use App\Http\Controllers\OurPortofolioController;
 use App\Http\Controllers\OurProjectController;
+use App\Http\Controllers\OurServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,7 @@ Route::prefix('dashboard')->group(function () {
     Route::resource('/our-partner', OurPartnerController::class);
     Route::resource('/our-project', OurProjectController::class);
     Route::resource('/our-portofolio', OurPortofolioController::class);
+    Route::resource('/our-service', OurServiceController::class);
 
     Route::resource('/gallery', GalleryController::class);
 });

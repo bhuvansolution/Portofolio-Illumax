@@ -16,18 +16,18 @@
         <li class="side-nav__devider my-6"></li>
         <li>
             <a href="javascript:;"
-                class="side-menu {{ Request::is('dashboard/aboutus*', 'dashboard/our-partner*', 'dashboard/contact*', 'dashboard/our-project*') ? 'side-menu--active' : '' }}">
+                class="side-menu {{ Request::is('dashboard/aboutus*', 'dashboard/our-partner*', 'dashboard/contact*', 'dashboard/our-project*', 'dashboard/our-service*') ? 'side-menu--active' : '' }}">
                 <div class="side-menu__icon"> <i data-lucide="layers"></i> </div>
                 <div class="side-menu__title">
                     Menu Home
                     <div
-                        class="side-menu__sub-icon {{ Request::is('dashboard/aboutus*', 'dashboard/our-partner*', 'dashboard/contact*', 'dashboard/our-project*') ? 'transform rotate-180' : '' }}">
+                        class="side-menu__sub-icon {{ Request::is('dashboard/aboutus*', 'dashboard/our-partner*', 'dashboard/contact*', 'dashboard/our-project*', 'dashboard/our-service*') ? 'transform rotate-180' : '' }}">
                         <i data-lucide="chevron-down"></i>
                     </div>
                 </div>
             </a>
             <ul
-                class="{{ Request::is('dashboard/aboutus*', 'dashboard/our-partner*', 'dashboard/contact*', 'dashboard/our-project*') ? 'side-menu__sub-open' : '' }}">
+                class="{{ Request::is('dashboard/aboutus*', 'dashboard/our-partner*', 'dashboard/contact*', 'dashboard/our-project*', 'dashboard/our-service*') ? 'side-menu__sub-open' : '' }}">
                 <li>
                     <a href="/dashboard/aboutus"
                         class="side-menu {{ Request::is('dashboard/aboutus*') ? 'side-menu--active' : '' }}">
@@ -54,6 +54,13 @@
                         class="side-menu {{ Request::is('dashboard/our-project*') ? 'side-menu--active' : '' }}">
                         <div class="side-menu__icon"> <i data-lucide="monitor"></i> </div>
                         <div class="side-menu__title">Our Project</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/dashboard/our-service"
+                        class="side-menu {{ Request::is('dashboard/our-service*') ? 'side-menu--active' : '' }}">
+                        <div class="side-menu__icon"> <i data-lucide="monitor"></i> </div>
+                        <div class="side-menu__title">Our Service</div>
                     </a>
                 </li>
 
