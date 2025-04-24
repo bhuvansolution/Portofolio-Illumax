@@ -15,8 +15,8 @@ class OurServiceSeeder extends Seeder
     public function run(): void
     {
         OurService::firstOrCreate([], [
-            'title' => null,
-            'description' => Null
+            'title' => '["sfsfsf"]',
+            'description' => '["sfsfsf"]'
         ]);
     }
 }
