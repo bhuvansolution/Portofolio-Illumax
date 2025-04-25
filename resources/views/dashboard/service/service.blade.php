@@ -19,55 +19,65 @@
                                     class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5">
                                     <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i>Our Service
                                 </div>
-                                <div id="formContainer" class="mt-5">
-                                    @forelse ($service->title as $key => $title)
+                                <div id="formContainer" class="mt-5 form-group">
+                                    @forelse ($service->description as $key => $description)
                                         <div
-                                            class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
-                                            <div class="form-label xl:w-64 xl:!mr-10">
-                                                <div class="text-left">
-                                                    <div class="flex items-center">
-                                                        <div class="font-medium">Title</div>
-                                                        <div
-                                                            class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">
-                                                            Required</div>
-                                                    </div>
-                                                    <div class="leading-relaxed text-slate-500 text-xs mt-3">
-                                                        <div></div>
+                                            class="form-group mt-5 pt-5 border-t border-slate-200/60 dark:border-darkmode-400 pb-5">
+
+                                            <div
+                                                class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
+                                                <div class="form-label xl:w-64 xl:!mr-10">
+                                                    <div class="text-left">
+                                                        <div class="flex items-center">
+                                                            <div class="font-medium">Title</div>
+                                                            <div
+                                                                class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">
+                                                                Required</div>
+                                                        </div>
+                                                        <div class="leading-relaxed text-slate-500 text-xs mt-3">
+                                                            <div></div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="w-full mt-3 xl:mt-0 flex-1">
-                                                <input id="title" name="title[]" type="text" class="form-control"
-                                                    placeholder="Title" value="{{ $title }}">
-                                                @error('title')
-                                                    <div class="text-danger form-help text-left">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
-                                            <div class="form-label xl:w-64 xl:!mr-10">
-                                                <div class="text-left">
-                                                    <div class="flex items-center">
-                                                        <div class="font-medium">Description</div>
-                                                        <div
-                                                            class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">
-                                                            Required</div>
-                                                    </div>
-                                                    <div class="leading-relaxed text-slate-500 text-xs mt-3">
-                                                        <div>Enter a description in English</div>
-                                                    </div>
+                                                <div class="w-full mt-3 xl:mt-0 flex-1">
+                                                    <input id="title" name="title[]" type="text" class="form-control"
+                                                        placeholder="Title" value="{{ $service->title[$key] }}">
+                                                    @error('title')
+                                                        <div class="text-danger form-help text-left">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
                                             </div>
-                                            <div class="w-full mt-3 xl:mt-0 flex-1">
-                                                <textarea name="description[]" id="description" rows="5" class="w-full form-control">{{ $service->description[$key] }}</textarea>
-                                                @error('description')
-                                                    <div class="text-danger form-help text-left">
-                                                        {{ $message }}
+                                            <div
+                                                class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
+                                                <div class="form-label xl:w-64 xl:!mr-10">
+                                                    <div class="text-left">
+                                                        <div class="flex items-center">
+                                                            <div class="font-medium">Description</div>
+                                                            <div
+                                                                class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">
+                                                                Required</div>
+                                                        </div>
+                                                        <div class="leading-relaxed text-slate-500 text-xs mt-3">
+                                                            <div>Enter a description in English</div>
+                                                        </div>
                                                     </div>
-                                                @enderror
+                                                </div>
+                                                <div class="w-full mt-3 xl:mt-0 flex-1">
+                                                    <textarea name="description[]" id="description" rows="5" class="w-full form-control">{{ $description }}</textarea>
+                                                    @error('description')
+                                                        <div class="text-danger form-help text-left">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-end mt-3">
+                                                <button type="button"
+                                                    class="removeBtn px-4 py-2 border border-red-500 text-red-500 rounded-md hover:bg-red-500 hover:text-white transition">
+                                                    Hapus
+                                                </button>
                                             </div>
                                         </div>
                                     @empty
@@ -121,8 +131,6 @@
                                             </div>
                                         </div>
                                     @endforelse
-
-
                                 </div>
                             </div>
                             <!-- Tombol Tambah -->
@@ -158,7 +166,7 @@
 
             // Membuat elemen baru untuk ditambahkan
             var newForm = `
-                        <div class="mt-5 pt-5 border-t border-slate-200/60 dark:border-darkmode-400 pb-5">
+                        <div class="form-group mt-5 pt-5 border-t border-slate-200/60 dark:border-darkmode-400 pb-5">
                             <div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
                                 <div class="form-label xl:w-64 xl:!mr-10">
                                     <div class="text-left">
@@ -227,7 +235,7 @@
             document.querySelectorAll('.removeBtn').forEach(button => {
                 button.addEventListener('click', function() {
                     // Menghapus elemen pembungkus utama yang berisi semua field input
-                    this.closest('.mt-5').remove();
+                    this.closest('.form-group').remove();
                 });
             });
         }

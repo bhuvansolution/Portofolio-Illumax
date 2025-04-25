@@ -183,7 +183,7 @@
                                                             src="/assets/images/aboutus/{{ $aboutus->gambar }}">
                                                         <div title="Remove this image?"
                                                             class="tooltip w-5 h-5 flex items-center justify-center absolute rounded-full text-white bg-danger right-0 top-0 -mr-2 -mt-2"
-                                                            onclick="remove({{ $aboutus->id }})">
+                                                            onclick="remove({{ $aboutus->id }}, 'preview')">
                                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                                 class="w-4 h-4 cursor-pointer" viewBox="0 0 24 24"
                                                                 fill="none" stroke="currentColor" stroke-width="2"
@@ -207,6 +207,8 @@
                                                     type="file" accept="image/*"
                                                     class="w-full h-full top-0 left-0 absolute opacity-0 cursor-pointer"
                                                     onchange="preview(event, {{ $aboutus->id }})">
+                                                <input type="hidden" name="hapus_gambar"
+                                                    id="hapus-gambar-{{ $aboutus->id }}" value="0">
                                             </div>
                                         </div>
                                         @error('gambar')
@@ -241,7 +243,7 @@
                                                             src="/assets/images/aboutus/{{ $aboutus->vgambar }}">
                                                         <div title="Remove this image?"
                                                             class="tooltip w-5 h-5 flex items-center justify-center absolute rounded-full text-white bg-danger right-0 top-0 -mr-2 -mt-2"
-                                                            onclick="remove({{ $aboutus->id }})">
+                                                            onclick="remove({{ $aboutus->id }}, 'vpreview')">
                                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                                 class="w-4 h-4 cursor-pointer" viewBox="0 0 24 24"
                                                                 fill="none" stroke="currentColor" stroke-width="2"
@@ -265,6 +267,8 @@
                                                     type="file" accept="image/*"
                                                     class="w-full h-full top-0 left-0 absolute opacity-0 cursor-pointer"
                                                     onchange="preview(event, {{ $aboutus->id }})">
+                                                <input type="hidden" name="hapus_vgambar"
+                                                    id="hapus-vgambar-{{ $aboutus->id }}" value="0">
                                             </div>
                                         </div>
                                         @error('gambar')
@@ -292,14 +296,14 @@
                                             <div class="flex flex-wrap px-4 cursor-pointer"
                                                 id="mpreview-{{ $aboutus->id }}">
                                                 <!-- Pratinjau Gambar Akan Ditambahkan di Sini Secara Dinamis -->
-                                                @if ($aboutus->gambar)
+                                                @if ($aboutus->mgambar)
                                                     <div
                                                         class="w-24 h-24 relative image-fit mb-5 mr-5 cursor-pointer zoom-in">
                                                         <img class="rounded-md" alt="Preview Image"
-                                                            src="/assets/images/aboutus/{{ $aboutus->gambar }}">
+                                                            src="/assets/images/aboutus/{{ $aboutus->mgambar }}">
                                                         <div title="Remove this image?"
                                                             class="tooltip w-5 h-5 flex items-center justify-center absolute rounded-full text-white bg-danger right-0 top-0 -mr-2 -mt-2"
-                                                            onclick="remove({{ $aboutus->id }})">
+                                                            onclick="remove({{ $aboutus->id }}, 'mpreview')">
                                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                                 class="w-4 h-4 cursor-pointer" viewBox="0 0 24 24"
                                                                 fill="none" stroke="currentColor" stroke-width="2"
@@ -323,6 +327,8 @@
                                                     type="file" accept="image/*"
                                                     class="w-full h-full top-0 left-0 absolute opacity-0 cursor-pointer"
                                                     onchange="preview(event, {{ $aboutus->id }})">
+                                                <input type="hidden" name="hapus_mgambar"
+                                                    id="hapus-mgambar-{{ $aboutus->id }}" value="0">
                                             </div>
                                         </div>
                                         @error('gambar')
@@ -389,13 +395,21 @@
                 }
             }
 
-            // Fungsi untuk menghapus pratinjau gambar
             window.remove = function(fileId, previewPrefix) {
                 const previewContainer = document.getElementById(previewPrefix + "-" + fileId);
-                previewContainer.innerHTML = ""; // Hapus pratinjau gambar
+                previewContainer.innerHTML = "";
 
                 const fileInput = document.getElementById(previewPrefix + "-input-" + fileId);
-                fileInput.value = ""; // Reset input file
+                if (fileInput) fileInput.value = "";
+
+                // Tentukan nama kolom berdasarkan previewPrefix
+                let kolom = '';
+                if (previewPrefix === 'mpreview') kolom = 'mgambar';
+                if (previewPrefix === 'vpreview') kolom = 'vgambar';
+                if (previewPrefix === 'preview') kolom = 'gambar';
+
+                const hiddenInput = document.getElementById("hapus-" + kolom + "-" + fileId);
+                if (hiddenInput) hiddenInput.value = "1";
             }
 
             // Inisialisasi preview gambar umum, visi, dan misi

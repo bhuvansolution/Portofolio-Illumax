@@ -23,14 +23,14 @@ class OurServiceController extends Controller
     }
 
 
-    public function update(Request $request,  $id)
+    public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
             'title.*' => 'nullable',
             'description.*' => 'nullable',
         ]);
 
-        // Filter data yang tidak null atau kosong
+        // Filter input yang kosong
         $filteredtitle = array_filter($request->title, function ($value) {
             return !is_null($value) && $value !== '';
         });
@@ -39,14 +39,11 @@ class OurServiceController extends Controller
             return !is_null($value) && $value !== '';
         });
 
+        // Gunakan hasil filter
         $validatedData['title'] = json_encode(array_values($filteredtitle));
         $validatedData['description'] = json_encode(array_values($filtereddescription));
 
         try {
-            // Simpan lokasi, alamat, dan telepon sebagai JSON
-            $validatedData['title'] = json_encode($request->title);
-            $validatedData['description'] = json_encode($request->description);
-
             OurService::where('id', $id)->update($validatedData);
             return redirect('/dashboard/our-service')->with('success', 'Berhasil di Update');
         } catch (\Exception $e) {

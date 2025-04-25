@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->text('description')->nullable();
             $table->string('gambar')->nullable();
+            $table->string('vgambar')->nullable();
+            $table->string('mgambar')->nullable();
             $table->text('visi')->nullable();
             $table->text('misi')->nullable();
             $table->text('vision')->nullable();
