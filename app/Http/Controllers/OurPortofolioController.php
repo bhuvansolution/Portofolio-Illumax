@@ -52,8 +52,8 @@ class OurPortofolioController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'slug' => 'required|unique:our_portofolios',
-            'gambar' => 'required|image|mimes:jpg,png,jpeg,webp',
-            'video' => 'required|mimes:mp4,mov,ogg,qt,webm',
+            'gambar' => 'required|image|mimes:jpg,png,jpeg,webp|max:5120',
+            'video' => 'required|mimes:mp4,mov,ogg,qt,webm|max:51200',
             'description' => 'required',
         ]);
 
@@ -133,6 +133,7 @@ class OurPortofolioController extends Controller
             'title' => 'required',
             'description' => 'required',
             'slug' => 'required|unique:our_portofolios,slug,' . $id,
+            'gambar' => 'image|mimes:jpg,png,jpeg,webp|max:5120',
         ]);
 
         try {

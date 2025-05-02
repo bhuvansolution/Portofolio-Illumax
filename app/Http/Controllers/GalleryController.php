@@ -45,7 +45,7 @@ class GalleryController extends Controller
 
         $validatedData = $request->validate([
             'title' => 'required',
-            'gambar' => 'required|image|mimes:jpg,png,jpeg,webp',
+            'gambar' => 'required|image|mimes:jpg,png,jpeg,webp|max:5120',
         ]);
 
 
@@ -108,6 +108,7 @@ class GalleryController extends Controller
         $gallery = Gallery::findOrFail($id);
         $validatedData = $request->validate([
             'title' => 'required',
+            'gambar' => 'image|mimes:jpg,png,jpeg,webp|max:5120',
         ]);
 
         try {

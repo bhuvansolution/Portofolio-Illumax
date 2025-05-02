@@ -101,7 +101,7 @@
                         </div>
 
                         <div class="flex justify-center flex-col md:flex-row gap-2 mt-5">
-                            <a href="/dashboard/info"
+                            <a href="/dashboard/our-portofolio"
                                 class="btn py-3 border-slate-300 dark:border-darkmode-400 text-slate-500 w-full md:w-52">
                                 Cancel
                             </a>

@@ -32,9 +32,9 @@ class AboutusController extends Controller
             'misi' => 'required',
             'vision' => 'required',
             'mission' => 'required',
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
-            'vgambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
-            'mgambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
+            'vgambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
+            'mgambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
         ]);
 
         try {

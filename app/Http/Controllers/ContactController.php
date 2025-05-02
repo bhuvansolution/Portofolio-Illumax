@@ -28,7 +28,7 @@ class ContactController extends Controller
             'email' => 'required|email',
             'alamat' => 'required',
             'web' => 'required|url',
-            'gambar' => 'nullable',
+            'gambar' => 'image|mimes:jpg,png,jpeg,webp|max:5120',
         ]);
 
         try {

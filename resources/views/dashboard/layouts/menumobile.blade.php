@@ -51,7 +51,12 @@
                             <div class="menu__title">Our Project</div>
                         </a>
                     </li>
-
+                    <li>
+                        <a href="/dashboard/our-service" class="menu">
+                            <div class="menu__icon"> <i data-lucide="monitor"></i> </div>
+                            <div class="menu__title">Our Service</div>
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li>

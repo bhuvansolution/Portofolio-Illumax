@@ -44,7 +44,7 @@ class OurProjectController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'url' => 'required',
-            'gambar' => 'required|image|mimes:jpg,png,jpeg,webp',
+            'gambar' => 'required|image|mimes:jpg,png,jpeg,webp|max:5120',
         ]);
 
         if ($request->hasFile('gambar')) {
@@ -107,6 +107,7 @@ class OurProjectController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'url' => 'required',
+            'gambar' => 'image|mimes:jpg,png,jpeg,webp|max:5120',
         ]);
 
         try {
