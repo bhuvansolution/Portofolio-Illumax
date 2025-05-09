@@ -28,33 +28,45 @@
                 </a>
                 <ul class="">
                     <li>
+                        <a href="/dashboard/homepage" class="menu">
+                            <div class="menu__icon"> <i data-lucide="activity"></i> </div>
+                            <div class="menu__title">Home Page</div>
+                        </a>
+                    </li>
+                    <li>
                         <a href="/dashboard/aboutus" class="menu">
-                            <div class="menu__icon"> <i data-lucide="home"></i> </div>
+                            <div class="menu__icon"> <i data-lucide="activity"></i> </div>
                             <div class="menu__title">About Us</div>
                         </a>
                     </li>
                     <li>
                         <a href="/dashboard/contact" class="menu">
-                            <div class="menu__icon"> <i data-lucide="phone-call"></i> </div>
+                            <div class="menu__icon"> <i data-lucide="activity"></i> </div>
                             <div class="menu__title"> Contact</div>
                         </a>
                     </li>
                     <li>
                         <a href="/dashboard/our-partner" class="menu">
-                            <div class="menu__icon"> <i data-lucide="monitor"></i> </div>
+                            <div class="menu__icon"> <i data-lucide="activity"></i> </div>
                             <div class="menu__title">Our Partner</div>
                         </a>
                     </li>
                     <li>
                         <a href="/dashboard/our-project" class="menu">
-                            <div class="menu__icon"> <i data-lucide="monitor"></i> </div>
+                            <div class="menu__icon"> <i data-lucide="activity"></i> </div>
                             <div class="menu__title">Our Project</div>
                         </a>
                     </li>
                     <li>
                         <a href="/dashboard/our-service" class="menu">
-                            <div class="menu__icon"> <i data-lucide="monitor"></i> </div>
+                            <div class="menu__icon"> <i data-lucide="activity"></i> </div>
                             <div class="menu__title">Our Service</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/dashboard/why-choose" class="menu">
+                            <div class="menu__icon"> <i data-lucide="activity"></i> </div>
+                            <div class="menu__title">Why Choose Us</div>
                         </a>
                     </li>
                 </ul>

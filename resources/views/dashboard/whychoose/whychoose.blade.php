@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.app')
 @section('container')
-    <form action="/dashboard/our-service/{{ $service->id }}" method="post" enctype="multipart/form-data">
+    <form action="/dashboard/why-choose/{{ $whychoose->id }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="grid grid-cols-12 gap-6">
@@ -10,17 +10,17 @@
                     <div class="col-span-12 mt-8">
                         <div class="intro-y flex items-center h-10">
                             <h2 class="text-lg font-medium truncate mr-5">
-                                Our Service
+                                {{ $title }}
                             </h2>
                         </div>
                         <div class="intro-y box p-5 mt-5">
                             <div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
                                 <div
                                     class="font-medium text-base flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5">
-                                    <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i>Our Service
+                                    <i data-lucide="chevron-down" class="w-4 h-4 mr-2"></i>{{ $title }}
                                 </div>
                                 <div id="formContainer" class="mt-5 form-group">
-                                    @forelse ($service->description as $key => $description)
+                                    @forelse ($whychoose->description as $key => $description)
                                         <div
                                             class="form-group mt-5 pt-5 border-t border-slate-200/60 dark:border-darkmode-400 pb-5">
                                             <div
@@ -40,7 +40,7 @@
                                                 </div>
                                                 <div class="w-full mt-3 xl:mt-0 flex-1">
                                                     <input id="title" name="title[]" type="text" class="form-control"
-                                                        placeholder="Title" value="{{ $service->title[$key] }}">
+                                                        placeholder="Title" value="{{ $whychoose->title[$key] }}">
                                                     @error('title')
                                                         <div class="text-danger form-help text-left">
                                                             {{ $message }}
@@ -88,7 +88,7 @@
                                                 <div class="w-full mt-3 xl:mt-0 flex-1">
                                                     <input id="engtitle" name="engtitle[]" type="text"
                                                         class="form-control" placeholder="engTitle"
-                                                        value="{{ $service->engtitle[$key] }}">
+                                                        value="{{ $whychoose->engtitle[$key] }}">
                                                     @error('engtitle')
                                                         <div class="text-danger form-help text-left">
                                                             {{ $message }}
@@ -109,7 +109,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="w-full mt-3 xl:mt-0 flex-1">
-                                                    <textarea name="engdescription[]" id="engdescription" rows="5" class="w-full form-control">{{ $service->engdescription[$key] }}</textarea>
+                                                    <textarea name="engdescription[]" id="engdescription" rows="5" class="w-full form-control">{{ $whychoose->engdescription[$key] }}</textarea>
                                                     @error('engdescription')
                                                         <div class="text-danger form-help text-left">
                                                             {{ $message }}

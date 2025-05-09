@@ -2,19 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\OurService;
+use App\Models\WhyChoose;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Queue\NullQueue;
 
-class OurServiceSeeder extends Seeder
+class WhyChooseSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        OurService::firstOrCreate([], [
+        WhyChoose::firstOrCreate([], [
             'title' => '["title"]',
             'description' => '["description"]',
             'engtitle' => '["engtitle"]',

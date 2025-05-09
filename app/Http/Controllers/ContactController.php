@@ -22,36 +22,52 @@ class ContactController extends Controller
 
     public function update(Request $request,  $id)
     {
-        $contact = Contact::where('id', $id)->firstOrFail();
+        $file = Contact::where('id', $id)->firstOrFail();
         $validatedData = $request->validate([
+            'phone' => 'required',
             'whatsapp' => 'required',
             'email' => 'required|email',
-            'alamat' => 'required',
-            'web' => 'required|url',
-            'gambar' => 'image|mimes:jpg,png,jpeg,webp|max:5120',
+            'office' => 'required',
+            'gambar' => 'nullable|image|mimes:jpg,png,jpeg,webp|max:5120',
+            'gambar1' => 'nullable|image|mimes:jpg,png,jpeg,webp|max:5120',
+            'textatas' => 'required',
+            'textbawah' => 'required',
+            'engtextatas' => 'required',
+            'engtextbawah' => 'required',
         ]);
 
         try {
-            if ($request->has('gambar')) {
-                File::delete('assets/images/contact/' . $contact->gambar);
+            // === HAPUS GAMBAR JIKA DIMINTA ===
+            if ($request->hapus_gambar == 1 && $file->gambar) {
+                File::delete('assets/images/contact/' . $file->gambar);
+                $validatedData['gambar'] = null;
+            }
+
+            if ($request->hapus_gambar1 == 1 && $file->gambar1) {
+                File::delete('assets/images/contact/' . $file->gambar1);
+                $validatedData['gambar1'] = null;
+            }
+
+            // === UPLOAD GAMBAR JIKA ADA ===
+
+            if ($request->hasFile('gambar')) {
+                File::delete('assets/images/contact/' . $file->gambar);
                 $gambar = $request->file('gambar');
-                $nama_gambar = 'contactus' . '.' . $gambar->getClientOriginalExtension();
+                $nama_gambar = 'contact.' . $gambar->getClientOriginalExtension();
                 $gambar->move('assets/images/contact', $nama_gambar);
-                $validatedData['gambar'] = $nama_gambar;
-            } else {
-                // Jika tidak ada gambar baru, ganti nama gambar lama mengikuti title baru
-                $oldImageName = $contact->gambar;
-                $extension = pathinfo($oldImageName, PATHINFO_EXTENSION); // Ambil ekstensi gambar lama
-                $nama_gambar = 'contactus' . '.' . $extension; // Nama gambar baru sesuai title
-
-                // Pindahkan gambar lama ke nama baru
-                File::move('assets/images/contact/' . $oldImageName, 'assets/images/contact/' . $nama_gambar);
-
-                // Simpan nama gambar baru di validatedData
                 $validatedData['gambar'] = $nama_gambar;
             }
 
+            if ($request->hasFile('gambar1')) {
+                File::delete('assets/images/contact/' . $file->gambar1);
+                $gambar1 = $request->file('gambar1');
+                $nama_gambar1 = 'contact1.' . $gambar1->getClientOriginalExtension();
+                $gambar1->move('assets/images/contact', $nama_gambar1);
+                $validatedData['gambar1'] = $nama_gambar1;
+            }
+
             Contact::where('id', $id)->update($validatedData);
+
             return redirect('/dashboard/contact')->with('success', 'Berhasil di Update');
         } catch (\Exception $e) {
             return redirect('/dashboard/contact')->with('error', 'Terjadi kesalahan, Silahkan coba lagi.');

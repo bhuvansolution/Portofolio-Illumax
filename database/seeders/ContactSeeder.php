@@ -15,9 +15,13 @@ class ContactSeeder extends Seeder
     {
         Contact::updateOrCreate([
             'whatsapp' => '123445',
-            'email' => 'Test',
-            'alamat' => 'Test',
-            'web' => 'Test',
+            'email' => 'Test@gmail.com',
+            'office' => 'Test',
+            'phone' => '123445',
+            'textatas' => 'textatas',
+            'engtextatas' => 'engtextatas',
+            'textbawah' => 'textbawah',
+            'engtextbawah' => 'engtextbawah',
         ]);
     }
 }

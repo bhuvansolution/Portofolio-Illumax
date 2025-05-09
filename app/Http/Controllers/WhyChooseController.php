@@ -2,28 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\OurService;
+use App\Models\WhyChoose;
 use Illuminate\Http\Request;
 
-class OurServiceController extends Controller
+class WhyChooseController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $service = OurService::firstOrFail();
+        $whychoose = WhyChoose::firstOrFail();
 
-        $service->title = json_decode($service->title);
-        $service->description = json_decode($service->description);
-        $service->engtitle = json_decode($service->engtitle);
-        $service->engdescription = json_decode($service->engdescription);
-        return view('dashboard.service.service', [
-            'title' => 'Our Service',
-            'service' => $service
+        $whychoose->title = json_decode($whychoose->title);
+        $whychoose->description = json_decode($whychoose->description);
+        $whychoose->engtitle = json_decode($whychoose->engtitle);
+        $whychoose->engdescription = json_decode($whychoose->engdescription);
+        return view('dashboard.whychoose.whychoose', [
+            'title' => ' Why Choose',
+            'whychoose' => $whychoose
         ]);
     }
-
 
     public function update(Request $request, $id)
     {
@@ -48,10 +47,10 @@ class OurServiceController extends Controller
         $validatedData['description'] = json_encode(array_values($filtereddescription));
 
         try {
-            OurService::where('id', $id)->update($validatedData);
-            return redirect('/dashboard/our-service')->with('success', 'Berhasil di Update');
+            WhyChoose::where('id', $id)->update($validatedData);
+            return redirect('/dashboard/why-choose')->with('success', 'Berhasil di Update');
         } catch (\Exception $e) {
-            return redirect('/dashboard/our-service')->with('error', 'Terjadi kesalahan, Silahkan coba lagi.');
+            return redirect('/dashboard/why-choose')->with('error', 'Terjadi kesalahan, Silahkan coba lagi.');
         }
     }
 }

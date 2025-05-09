@@ -13,14 +13,18 @@ return new class extends Migration
     {
         Schema::create('aboutuses', function (Blueprint $table) {
             $table->id();
-            $table->text('description')->nullable();
+            $table->string('banneratas')->nullable();
+            $table->string('gambar1')->nullable();
             $table->string('gambar')->nullable();
-            $table->string('vgambar')->nullable();
-            $table->string('mgambar')->nullable();
-            $table->text('visi')->nullable();
-            $table->text('misi')->nullable();
-            $table->text('vision')->nullable();
-            $table->text('mission')->nullable();
+            $table->string('bannerbawah')->nullable();
+            $table->string('textatas')->nullable();
+            $table->string('engtextatas')->nullable();
+            $table->string('judul')->nullable();
+            $table->string('engjudul')->nullable();
+            $table->text('description')->nullable();
+            $table->text('engdescription')->nullable();
+            $table->string('textbawah')->nullable();
+            $table->string('engtextbawah')->nullable();
             $table->timestamps();
         });
     }

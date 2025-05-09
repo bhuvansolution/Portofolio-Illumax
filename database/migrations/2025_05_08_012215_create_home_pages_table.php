@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('our_services', function (Blueprint $table) {
+        Schema::create('home_pages', function (Blueprint $table) {
             $table->id();
-            $table->json('title')->nullable(); // Kolom untuk menyimpan data alamat brand
-            $table->json('description')->nullable();
-            $table->json('engtitle')->nullable(); // Kolom untuk menyimpan data alamat brand
-            $table->json('engdescription')->nullable();
+            $table->string('title');
+            $table->string('engtitle');
+            $table->json('gambar')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('our_services');
+        Schema::dropIfExists('home_pages');
     }
 };

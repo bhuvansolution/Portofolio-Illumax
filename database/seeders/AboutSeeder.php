@@ -14,11 +14,15 @@ class AboutSeeder extends Seeder
     public function run(): void
     {
         Aboutus::updateOrCreate([
-            'description' => 'Test',
-            'visi' => 'Test',
-            'misi' => 'Test',
-            'vision' => 'Test',
-            'mission' => 'Test',
+            'textatas' => 'textatas',
+            'judul' => 'judul',
+            'description' => 'description',
+            'textbawah' => 'textbawah',
+            'engtextatas' => 'engtextatas',
+            'engjudul' => 'engjudul',
+            'engdescription' => 'engdescription',
+            'engtextbawah' => 'engtextbawah',
+
         ]);
     }
 }

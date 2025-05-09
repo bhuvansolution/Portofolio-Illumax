@@ -27,34 +27,51 @@ class AboutusController extends Controller
         $file = Aboutus::where('id', $id)->firstOrFail();
 
         $validatedData = $request->validate([
+            'textatas' => 'required',
+            'judul' => 'required',
             'description' => 'required',
-            'visi' => 'required',
-            'misi' => 'required',
-            'vision' => 'required',
-            'mission' => 'required',
+            'textbawah' => 'required',
+            'engtextatas' => 'required',
+            'engjudul' => 'required',
+            'engdescription' => 'required',
+            'engtextbawah' => 'required',
+            'banneratas' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
-            'vgambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
-            'mgambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
+            'gambar1' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
+            'bannerbawah' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
         ]);
 
         try {
             // === HAPUS GAMBAR JIKA DIMINTA ===
+            if ($request->hapus_banneratas == 1 && $file->banneratas) {
+                File::delete('assets/images/aboutus/' . $file->banneratas);
+                $validatedData['banneratas'] = null;
+            }
+
             if ($request->hapus_gambar == 1 && $file->gambar) {
                 File::delete('assets/images/aboutus/' . $file->gambar);
                 $validatedData['gambar'] = null;
             }
 
-            if ($request->hapus_vgambar == 1 && $file->vgambar) {
-                File::delete('assets/images/aboutus/' . $file->vgambar);
-                $validatedData['vgambar'] = null;
+            if ($request->hapus_gambar1 == 1 && $file->gambar1) {
+                File::delete('assets/images/aboutus/' . $file->gambar1);
+                $validatedData['gambar1'] = null;
             }
 
-            if ($request->hapus_mgambar == 1 && $file->mgambar) {
-                File::delete('assets/images/aboutus/' . $file->mgambar);
-                $validatedData['mgambar'] = null;
+            if ($request->hapus_bannerbawah == 1 && $file->bannerbawah) {
+                File::delete('assets/images/aboutus/' . $file->bannerbawah);
+                $validatedData['bannerbawah'] = null;
             }
 
             // === UPLOAD GAMBAR JIKA ADA ===
+            if ($request->hasFile('banneratas')) {
+                File::delete('assets/images/aboutus/' . $file->banneratas);
+                $banneratas = $request->file('banneratas');
+                $nama_banneratas = 'banneratas.' . $banneratas->getClientOriginalExtension();
+                $banneratas->move('assets/images/aboutus', $nama_banneratas);
+                $validatedData['banneratas'] = $nama_banneratas;
+            }
+
             if ($request->hasFile('gambar')) {
                 File::delete('assets/images/aboutus/' . $file->gambar);
                 $gambar = $request->file('gambar');
@@ -63,25 +80,25 @@ class AboutusController extends Controller
                 $validatedData['gambar'] = $nama_gambar;
             }
 
-            if ($request->hasFile('vgambar')) {
-                File::delete('assets/images/aboutus/' . $file->vgambar);
-                $vgambar = $request->file('vgambar');
-                $nama_vgambar = 'visi.' . $vgambar->getClientOriginalExtension();
-                $vgambar->move('assets/images/aboutus', $nama_vgambar);
-                $validatedData['vgambar'] = $nama_vgambar;
+            if ($request->hasFile('gambar1')) {
+                File::delete('assets/images/aboutus/' . $file->gambar1);
+                $gambar1 = $request->file('gambar1');
+                $nama_gambar1 = 'about-us1.' . $gambar1->getClientOriginalExtension();
+                $gambar1->move('assets/images/aboutus', $nama_gambar1);
+                $validatedData['gambar1'] = $nama_gambar1;
             }
 
-            if ($request->hasFile('mgambar')) {
-                File::delete('assets/images/aboutus/' . $file->mgambar);
-                $mgambar = $request->file('mgambar');
-                $nama_mgambar = 'misi.' . $mgambar->getClientOriginalExtension();
-                $mgambar->move('assets/images/aboutus', $nama_mgambar);
-                $validatedData['mgambar'] = $nama_mgambar;
+            if ($request->hasFile('bannerbawah')) {
+                File::delete('assets/images/aboutus/' . $file->bannerbawah);
+                $bannerbawah = $request->file('bannerbawah');
+                $nama_bannerbawah = 'bannerbawah.' . $bannerbawah->getClientOriginalExtension();
+                $bannerbawah->move('assets/images/aboutus', $nama_bannerbawah);
+                $validatedData['bannerbawah'] = $nama_bannerbawah;
             }
 
             Aboutus::where('id', $id)->update($validatedData);
 
-            return redirect('/dashboard/aboutus')->with('success', 'File Berhasil di Update');
+            return redirect('/dashboard/aboutus')->with('success', ' Berhasil di Update');
         } catch (\Exception $e) {
             return redirect('/dashboard/aboutus')->with('error', 'Terjadi kesalahan, Silahkan coba lagi.');
         }

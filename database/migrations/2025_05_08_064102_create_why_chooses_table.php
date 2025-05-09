@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('our_services', function (Blueprint $table) {
+        Schema::create('why_chooses', function (Blueprint $table) {
             $table->id();
             $table->json('title')->nullable(); // Kolom untuk menyimpan data alamat brand
             $table->json('description')->nullable();
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('our_services');
+        Schema::dropIfExists('why_chooses');
     }
 };

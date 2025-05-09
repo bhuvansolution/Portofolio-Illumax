@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-span-12 sm:col-span-12">
                         <label for="url" class="block text-sm font-medium text-gray-700 mt-2">URL
-                            Video</label>
+                        </label>
                         <input type="text" id="url" name="url" class="form-control"
                             value="{{ old('url') }}" placeholder="Masukkan URL">
                     </div>
