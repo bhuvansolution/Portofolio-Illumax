@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md sticky-top navbar-dark" id="mainNav">
-    <div class="container"><a class="navbar-brand d-flex align-items-center" href="index.html"><img
+    <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><img
                 class="img-fluid logo-navbar" src="assets/img/illumax-logo-gold-removebg-preview.png"></a><button
             data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
                 class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>

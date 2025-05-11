@@ -25,7 +25,6 @@
             </div>
         </div>
         <div class="container py-4 py-xl-5">
-
             <div class="row w-100">
                 <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
                     <div class="movie-card"><img alt="person holding black dslr camera" class="image-porto"

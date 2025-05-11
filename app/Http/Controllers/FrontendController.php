@@ -30,6 +30,7 @@ class FrontendController extends Controller
             'ourservice' => $ourservice,
             'partner' => OurPartner::all(),
             'ourproject' => OurProject::all(),
+            'contacts' => Contact::firstOrFail(),
             'banner' => HomePage::firstOrFail()
         ]);
     }
@@ -38,6 +39,7 @@ class FrontendController extends Controller
         return view('home.about', [
             'title' => 'About ',
             'about' => Aboutus::firstOrFail(),
+            'contacts' => Contact::firstOrFail(),
         ]);
     }
     public function services()
