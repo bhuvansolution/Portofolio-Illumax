@@ -4,12 +4,15 @@ use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\GalleryPageController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\OurPartnerController;
 use App\Http\Controllers\OurPortofolioController;
 use App\Http\Controllers\OurProjectController;
 use App\Http\Controllers\OurServiceController;
+use App\Http\Controllers\PortofolioPageController;
 use App\Http\Controllers\WhyChooseController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,20 +37,40 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/logout', 'logout');
 });
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::controller(FrontendController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::get('/services', 'services');
+    Route::get('/aboutus', 'aboutus');
+    Route::get('/contacts', 'contacts');
+    Route::get('/portfolio', 'portofolio');
+    Route::get('/gallery', 'gallery');
 });
 
 // Home
 Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index']);
-    Route::resource('/homepage', HomePageController::class);
-    Route::resource('/aboutus', AboutusController::class);
-    Route::resource('/contact', ContactController::class);
     Route::resource('/our-partner', OurPartnerController::class);
     Route::resource('/our-project', OurProjectController::class);
     Route::resource('/our-portofolio', OurPortofolioController::class);
-    Route::resource('/our-service', OurServiceController::class);
     Route::resource('/why-choose', WhyChooseController::class);
     Route::resource('/gallery', GalleryController::class);
+    // Home Page
+    Route::get('/homepage', [HomePageController::class, 'index']);
+    Route::put('/homepage/{id}', [HomePageController::class, 'update']);
+    // Home Page
+    Route::get('/our-service', [OurServiceController::class, 'index']);
+    Route::put('/our-service/{id}', [OurServiceController::class, 'update']);
+    // contact Page
+    Route::get('/contact', [ContactController::class, 'index']);
+    Route::put('/contact/{id}', [ContactController::class, 'update']);
+    // About Us Page
+    Route::get('/aboutus', [AboutusController::class, 'index']);
+    Route::put('/aboutus/{id}', [AboutusController::class, 'update']);
+    // Gallery Page
+    Route::get('/gallerypage', [GalleryPageController::class, 'index']);
+    Route::put('/gallerypage/{id}', [GalleryPageController::class, 'update']);
+    // Porto Page
+    Route::get('/portofolio-page', [PortofolioPageController::class, 'index']);
+    Route::put('/portofolio-page/{id}', [PortofolioPageController::class, 'update']);
 });

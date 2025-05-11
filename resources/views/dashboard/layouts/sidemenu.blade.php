@@ -16,23 +16,37 @@
         <li class="side-nav__devider my-6"></li>
         <li>
             <a href="javascript:;"
-                class="side-menu {{ Request::is('dashboard/aboutus*', 'dashboard/our-partner*', 'dashboard/contact*', 'dashboard/our-project*', 'dashboard/our-service*', 'dashboard/why-choose*') ? 'side-menu--active' : '' }}">
+                class="side-menu {{ Request::is('dashboard/gallerypage*', 'dashboard/portofolio-page*', 'dashboard/aboutus*', 'dashboard/our-partner*', 'dashboard/contact*', 'dashboard/our-project*', 'dashboard/our-service*', 'dashboard/why-choose*') ? 'side-menu--active' : '' }}">
                 <div class="side-menu__icon"> <i data-lucide="layers"></i> </div>
                 <div class="side-menu__title">
                     Menu Home
                     <div
-                        class="side-menu__sub-icon {{ Request::is('dashboard/aboutus*', 'dashboard/our-partner*', 'dashboard/contact*', 'dashboard/our-project*', 'dashboard/our-service*', 'dashboard/why-choose*') ? 'transform rotate-180' : '' }}">
+                        class="side-menu__sub-icon {{ Request::is('dashboard/gallerypage*', 'dashboard/portofolio-page*', 'dashboard/aboutus*', 'dashboard/our-partner*', 'dashboard/contact*', 'dashboard/our-project*', 'dashboard/our-service*', 'dashboard/why-choose*') ? 'transform rotate-180' : '' }}">
                         <i data-lucide="chevron-down"></i>
                     </div>
                 </div>
             </a>
             <ul
-                class="{{ Request::is('dashboard/aboutus*', 'dashboard/homepage*', 'dashboard/our-partner*', 'dashboard/contact*', 'dashboard/our-project*', 'dashboard/our-service*', 'dashboard/why-choose*') ? 'side-menu__sub-open' : '' }}">
+                class="{{ Request::is('dashboard/gallerypage*', 'dashboard/portofolio-page*', 'dashboard/aboutus*', 'dashboard/homepage*', 'dashboard/our-partner*', 'dashboard/contact*', 'dashboard/our-project*', 'dashboard/our-service*', 'dashboard/why-choose*') ? 'side-menu__sub-open' : '' }}">
                 <li>
                     <a href="/dashboard/homepage"
                         class="side-menu {{ Request::is('dashboard/homepage*') ? 'side-menu--active' : '' }}">
                         <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
                         <div class="side-menu__title">Home Page</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/dashboard/gallerypage"
+                        class="side-menu {{ Request::is('dashboard/gallerypage*') ? 'side-menu--active' : '' }}">
+                        <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
+                        <div class="side-menu__title">Gallery Page</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/dashboard/portofolio-page"
+                        class="side-menu {{ Request::is('dashboard/portofolio-page*') ? 'side-menu--active' : '' }}">
+                        <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
+                        <div class="side-menu__title">Portofolio Page</div>
                     </a>
                 </li>
                 <li>
@@ -93,27 +107,7 @@
                 <div class="side-menu__title"> Gallery </div>
             </a>
         </li>
-        {{-- <li>
-            <a href="/dashboard/category"
-                class="side-menu {{ Request::is('dashboard/category') ? 'side-menu--active' : '' }}">
-                <div class="side-menu__icon"> <i data-lucide="layers"></i> </div>
-                <div class="side-menu__title"> Category </div>
-            </a>
-        </li> --}}
-        {{-- <li>
-            <a href="/dashboard/category"
-                class="side-menu {{ Request::is('dashboard/category') ? 'side-menu--active' : '' }}">
-                <div class="side-menu__icon"> <i data-lucide="layers"></i> </div>
-                <div class="side-menu__title"> Category </div>
-            </a>
-        </li>
-        <li>
-            <a href="/dashboard/file-manager"
-                class="side-menu {{ Request::is('dashboard/file-manager') ? 'side-menu--active' : '' }}">
-                <div class="side-menu__icon"> <i data-lucide="folder"></i> </div>
-                <div class="side-menu__title"> File Manager </div>
-            </a>
-        </li> --}}
+
         <li class="side-nav__devider my-6"></li>
     </ul>
 </nav>

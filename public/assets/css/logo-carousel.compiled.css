@@ -1,0 +1,25 @@
+.slider-right {
+  overflow: hidden;
+  white-space: nowrap;
+  direction: rtl; /* slide ke kanan */
+}
+
+.logos-right {
+  display: inline-flex;
+  animation: slidein-right 30s linear infinite;
+  direction: ltr; /* biar logo tampil normal */
+}
+.logos-right img {
+  width: 200px;
+  padding: 0 30px;
+  flex-shrink: 0;
+}
+
+@keyframes slidein-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

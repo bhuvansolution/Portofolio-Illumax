@@ -1,0 +1,98 @@
+.movie-poster {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover .movie-poster {
+  transform: scale(1.05);
+}
+
+/* Hover Popup */
+
+.hover-popup {
+  overflow: visible;
+  margin-bottom: 100px;
+  position: absolute;
+  top: -180px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  /*z-index: 100000000000;*/
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  border-radius: 10px;
+  background-color: #000;
+}
+
+.movie-card:hover .hover-popup {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.hover-popup video {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.hover-info {
+  z-index: 100;
+  padding: 10px;
+}
+
+.hover-info h6 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.hover-info button {
+  margin-top: 5px;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.modal-video {
+  width: 100%;
+  height: 60vh;
+}
+
+.modal-content {
+  background-color: #000;
+  border: none;
+}
+
+/* Label Pojok Kiri Atas */
+
+.label-top-left {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  /*background-color: red;*/
+  color: white;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+/* Label Tengah Gambar */
+
+.label-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  z-index: 2;
+  font-weight: 500;
+}
+

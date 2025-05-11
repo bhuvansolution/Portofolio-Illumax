@@ -1,0 +1,22 @@
+.container .slider {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.container .slider .logos {
+  display: inline-flex;
+  animation: slidein 30s linear infinite;
+}
+.container .slider .logos img {
+  width: 200px;
+  padding: 0 30px;
+  flex-shrink: 0;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

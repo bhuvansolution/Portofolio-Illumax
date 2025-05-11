@@ -148,6 +148,98 @@
                                         <div class="form-label xl:w-64 xl:!mr-10">
                                             <div class="text-left">
                                                 <div class="flex items-center">
+                                                    <div class="font-medium">Instagram</div>
+                                                    <div
+                                                        class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">
+                                                        Required</div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="w-full mt-3 xl:mt-0 flex-1">
+                                            <input id="instagram" name="instagram" type="text" class="form-control"
+                                                value="{{ old('instagram', $contact->instagram) }}">
+                                            @error('instagram')
+                                                <div class="text-danger form-help text-left">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
+                                        <div class="form-label xl:w-64 xl:!mr-10">
+                                            <div class="text-left">
+                                                <div class="flex items-center">
+                                                    <div class="font-medium">Facebook</div>
+                                                    <div
+                                                        class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">
+                                                        Required</div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="w-full mt-3 xl:mt-0 flex-1">
+                                            <input id="facebook" name="facebook" type="text" class="form-control"
+                                                value="{{ old('facebook', $contact->facebook) }}">
+                                            @error('facebook')
+                                                <div class="text-danger form-help text-left">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
+                                        <div class="form-label xl:w-64 xl:!mr-10">
+                                            <div class="text-left">
+                                                <div class="flex items-center">
+                                                    <div class="font-medium">Twitter</div>
+                                                    <div
+                                                        class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">
+                                                        Required</div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="w-full mt-3 xl:mt-0 flex-1">
+                                            <input id="twitter" name="twitter" type="text" class="form-control"
+                                                value="{{ old('twitter', $contact->twitter) }}">
+                                            @error('twitter')
+                                                <div class="text-danger form-help text-left">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
+                                        <div class="form-label xl:w-64 xl:!mr-10">
+                                            <div class="text-left">
+                                                <div class="flex items-center">
+                                                    <div class="font-medium">Url Maps</div>
+                                                    <div
+                                                        class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">
+                                                        Required</div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="w-full mt-3 xl:mt-0 flex-1">
+                                            <input id="maps" name="maps" type="text" class="form-control"
+                                                value="{{ old('maps', $contact->maps) }}">
+                                            @error('maps')
+                                                <div class="text-danger form-help text-left">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
+                                        <div class="form-label xl:w-64 xl:!mr-10">
+                                            <div class="text-left">
+                                                <div class="flex items-center">
                                                     <div class="font-medium">Office</div>
                                                     <div
                                                         class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">

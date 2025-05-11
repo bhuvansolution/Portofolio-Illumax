@@ -1,0 +1,87 @@
+img {
+}
+
+.logo-navbar {
+  width: 150px;
+}
+
+.navbar {
+  padding: 16px;
+  background-color: #000000;
+}
+
+@media (min-width: 768px) {
+  .nav-menu {
+    padding: 5px;
+    border: 1px solid#fff;
+    border-radius: 50px !important;
+  }
+}
+
+a {
+}
+
+.nav-item:hover {
+  /*padding: 2px;*/
+  /*transform: translateX(10px);*/
+  transition: transform 1s ease, background 0.3s ease, color 0.3s ease;
+  border-radius: 50px !important;
+  color: #000;
+  background: #ffffff;
+}
+
+.nav-item:focus {
+  padding: 2px;
+  /*transform: translateX(10px);*/
+  transition: transform 1s ease, background 0.3s ease, color 0.3s ease;
+  border-radius: 50px !important;
+  color: #000;
+  background: #ffffff;
+}
+
+.nav-item {
+}
+
+#mainNav.navbar-dark .navbar-nav > li.nav-item > a.nav-link {
+  font-size: 14px !important;
+  color: inherit;
+}
+
+#mainNav.navbar-dark .navbar-nav > li.nav-item > a.nav-link:hover, #mainNav.navbar-dark .navbar-nav > li.nav-item > a.nav-link:focus {
+  color: inherit;
+}
+
+.nav-item {
+  margin-left: 5px;
+  font-weight: 500!important;
+  font-size: 14px !important;
+  transition: transform 1s ease;
+  margin-left: 5px;
+}
+
+.nav-item.active {
+  /*border-radius: 50px !important;*/
+  /*background: #ffffff;*/
+  /*color: #000;*/
+}
+
+.nav-link:active {
+  border-radius: 50px !important;
+  color: #000 !important;
+  background: #ffffff !important;
+}
+
+#mainNav .navbar-nav > li.nav-item > a.nav-link.active {
+  background-color: #ffffff;
+  font-weight: 500 !important;
+  color: #000000;
+  border-radius: 50px;
+}
+
+#mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
+  background-color: #ffffff;
+  font-weight: 500 !important;
+  color: #000000;
+  border-radius: 50px;
+}
+

@@ -17,6 +17,10 @@ return new class extends Migration
             $table->integer('whatsapp');
             $table->string('email');
             $table->string('office');
+            $table->text('maps');
+            $table->text('instagram');
+            $table->text('facebook');
+            $table->text('twitter');
             $table->string('gambar')->nullable();
             $table->string('gambar1')->nullable();
             $table->string('textatas')->nullable();

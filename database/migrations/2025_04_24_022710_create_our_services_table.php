@@ -17,6 +17,9 @@ return new class extends Migration
             $table->json('description')->nullable();
             $table->json('engtitle')->nullable(); // Kolom untuk menyimpan data alamat brand
             $table->json('engdescription')->nullable();
+            $table->string('gambar')->nullable();
+            $table->string('textatas')->nullable();
+            $table->string('engtextatas')->nullable();
             $table->timestamps();
         });
     }

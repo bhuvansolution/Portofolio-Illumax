@@ -34,6 +34,18 @@
                         </a>
                     </li>
                     <li>
+                        <a href="/dashboard/gallerypage" class="menu">
+                            <div class="menu__icon"> <i data-lucide="activity"></i> </div>
+                            <div class="menu__title">Gallery Page</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/dashboard/portofolio-page" class="menu">
+                            <div class="menu__icon"> <i data-lucide="activity"></i> </div>
+                            <div class="menu__title">Portfolio Page</div>
+                        </a>
+                    </li>
+                    <li>
                         <a href="/dashboard/aboutus" class="menu">
                             <div class="menu__icon"> <i data-lucide="activity"></i> </div>
                             <div class="menu__title">About Us</div>

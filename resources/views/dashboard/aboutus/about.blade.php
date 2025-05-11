@@ -106,8 +106,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="w-full mt-3 xl:mt-0 flex-1">
-                                            <textarea name="description" id="description" rows="5" class="w-full form-control">{{ old('description', $aboutus->description) }}</textarea>
+                                        <div class="w-32 mt-3 xl:mt-0 flex-1">
+                                            <textarea name="description" id="description" rows="5" class="editor">{{ old('description', $aboutus->description) }}</textarea>
                                             @error('description')
                                                 <div class="text-danger form-help text-left">
                                                     {{ $message }}
@@ -149,8 +149,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="w-full mt-3 xl:mt-0 flex-1">
-                                            <textarea name="engdescription" id="engdescription" rows="5" class="w-full form-control">{{ old('engdescription', $aboutus->engdescription) }}</textarea>
+                                        <div class="w-32 mt-3 xl:mt-0 flex-1">
+                                            <textarea name="engdescription" id="engdescription" rows="5" class="editor">{{ old('engdescription', $aboutus->engdescription) }}</textarea>
                                             @error('engdescription')
                                                 <div class="text-danger form-help text-left">
                                                     {{ $message }}

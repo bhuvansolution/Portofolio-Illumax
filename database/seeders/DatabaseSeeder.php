@@ -18,5 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(HomepageSeeder::class);
         $this->call(WhyChooseSeeder::class);
+        $this->call(GalleryPageSeeder::class);
+        $this->call(PortoPageSeeder::class);
     }
 }
