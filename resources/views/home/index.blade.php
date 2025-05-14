@@ -234,15 +234,24 @@
         </div>
         <div class="container py-4 py-xl-5">
             <div class="row w-100">
-                @foreach ($porto as $video)
+                @foreach ($porto as $list)
                     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
-                        <div class="movie-card">
-                            <video controls width="100%" height="auto"
-                                poster="/assets/images/portofolio/{{ $video->gambar }}">
-                                <source src="/assets/video/portofolio/{{ $video->video }}" type="video/mp4">
-                            </video>
-                            <div class="text-center mt-2">
-                                <h5>{{ $video->title }}</h5>
+                        <div class="movie-card"><img alt="person holding black dslr camera" class="image-porto"
+                                src="/assets/images/portofolio/{{ $list->gambar }}">
+                            <div class="card-img-overlay text-center d-flex flex-column justify-content-center align-items-center image-cover-portfolio"
+                                style="background: linear-gradient(7deg, rgba(0,0,0,0.85) 0%, rgba(255,255,255,0.21) 99%);">
+                                <p class="paragraph-portfolio">Lorem Ipsum</p>
+                            </div>
+                            <div class="hover-popup">
+                                <video autoplay muted width="100%">
+                                    <source src="/assets/video/portofolio/{{ $list->video }}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="hover-info"><button class="btn"
+                                        data-bs-target="#videoModal-{{ $list->id }}" data-bs-toggle="modal"><i
+                                            class="far fa-play-circle text-white" style="font-size:20px;"></i></button>
+                                    <h5>Lorem Ipsum</h5>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -254,4 +263,20 @@
             </div>
         </div>
     </section>
+    @foreach ($porto as $modal)
+        <div class="modal fade" role="dialog" tabindex="-1" id="videoModal-{{ $modal->id }}">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+                        {{-- <iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/dRUlWLGumos">
+                    </iframe> --}}
+                        <video autoplay controls muted width="560" height="315">
+                            <source src="/assets/video/portofolio/{{ $modal->video }}" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
 @endsection

@@ -34,19 +34,6 @@
 
     @include('home.layouts.footer')
 
-    <div class="modal fade" role="dialog" tabindex="-1" id="videoModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Modal Title</h4><button class="btn-close" type="button" aria-label="Close"
-                        data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body"><iframe allowfullscreen="" frameborder="0"
-                        src="https://www.youtube.com/embed/dRUlWLGumos" width="560" height="315"></iframe></div>
-                <div class="modal-footer"></div>
-            </div>
-        </div>
-    </div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
