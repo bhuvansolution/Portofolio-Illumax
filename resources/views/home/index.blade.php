@@ -234,83 +234,19 @@
         </div>
         <div class="container py-4 py-xl-5">
             <div class="row w-100">
-                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
-                    <div class="movie-card"><img alt="person holding black dslr camera" class="image-porto"
-                            src="assets/img/photo-1598654478409-684ac5e410a9.jpg">
-                        <div class="card-img-overlay text-center d-flex flex-column justify-content-center align-items-center image-cover-portfolio"
-                            style="background: linear-gradient(7deg, rgba(0,0,0,0.85) 0%, rgba(255,255,255,0.21) 99%);">
-                            <p class="paragraph-portfolio">Lorem Ipsum</p>
-                        </div>
-                        <div class="hover-popup"><iframe allowfullscreen="" frameborder="0"
-                                src="https://www.youtube.com/embed/dRUlWLGumos?autoplay=1&amp;mute=1"
-                                class="ratio ratio-16x9" playsinline="" type="video/mp4" height="400"
-                                width="600"></iframe>
-                            <div class="hover-info"><button class="btn" data-bs-target="#videoModal"
-                                    data-bs-toggle="modal"><i class="far fa-play-circle text-white"
-                                        style="font-size:20px;"></i></button>
-                                <h5>Lorem Ipsum</h5>
+                @foreach ($porto as $video)
+                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
+                        <div class="movie-card">
+                            <video controls width="100%" height="auto"
+                                poster="/assets/images/portofolio/{{ $video->gambar }}">
+                                <source src="/assets/video/portofolio/{{ $video->video }}" type="video/mp4">
+                            </video>
+                            <div class="text-center mt-2">
+                                <h5>{{ $video->title }}</h5>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
-                    <div class="movie-card"><img alt="woman posing beside lite window" class="image-porto"
-                            src="assets/img/photo-1532800783378-1bed60adaf58.jpg">
-                        <div class="card-img-overlay text-center d-flex flex-column justify-content-center align-items-center"
-                            style="border-radius: 10px;background: linear-gradient(7deg, rgba(0,0,0,0.85) 0%, rgba(255,255,255,0.21) 99%); image-cover-portfolio">
-                            <p class="paragraph-portfolio">Lorem Ipsum</p>
-                        </div>
-                        <div class="hover-popup"><iframe allowfullscreen="" frameborder="0"
-                                src="https://www.youtube.com/embed/dRUlWLGumos?autoplay=1&amp;mute=1"
-                                class="ratio ratio-16x9" playsinline="" type="video/mp4" height="400"
-                                width="600"></iframe>
-                            <div class="hover-info"><button class="btn" data-bs-target="#videoModal"
-                                    data-bs-toggle="modal"><i class="far fa-play-circle text-white"
-                                        style="font-size:20px;"></i></button>
-                                <h5>Lorem Ipsum</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
-                    <div class="movie-card"><img alt="woman in orange long sleeve shirt holding black video camera"
-                            class="image-porto" src="assets/img/photo-1619955617520-8dc17e989d79.jpg">
-                        <div class="card-img-overlay text-center d-flex flex-column justify-content-center align-items-center image-cover-portfolio"
-                            style="background: linear-gradient(7deg, rgba(0,0,0,0.85) 0%, rgba(255,255,255,0.21) 99%); image-cover-portfolio">
-                            <p class="paragraph-portfolio">Lorem Ipsum</p>
-                        </div>
-                        <div class="hover-popup"><iframe allowfullscreen="" frameborder="0"
-                                src="https://www.youtube.com/embed/dRUlWLGumos?autoplay=1&amp;mute=1"
-                                class="ratio ratio-16x9" playsinline="" type="video/mp4" height="400"
-                                width="600"></iframe>
-                            <div class="hover-info"><button class="btn" data-bs-target="#videoModal"
-                                    data-bs-toggle="modal"><i class="far fa-play-circle text-white"
-                                        style="font-size:20px;"></i></button>
-                                <h5>Lorem Ipsum</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
-                    <div class="movie-card"><img alt="woman sitting on armless chair with light between bookcases in room"
-                            class="image-porto" src="assets/img/photo-1497015455546-1da71faf8d06.jpg">
-                        <div class="card-img-overlay text-center d-flex flex-column justify-content-center align-items-center image-cover-portfolio"
-                            style="background: linear-gradient(7deg, rgba(0,0,0,0.85) 0%, rgba(255,255,255,0.21) 99%);">
-                            <p class="paragraph-portfolio">Lorem Ipsum</p>
-                        </div>
-                        <div class="hover-popup"><iframe allowfullscreen="" frameborder="0"
-                                src="https://www.youtube.com/embed/dRUlWLGumos?autoplay=1&amp;mute=1"
-                                class="ratio ratio-16x9" playsinline="" type="video/mp4" height="400"
-                                width="600"></iframe>
-                            <div class="hover-info"><button class="btn" data-bs-target="#videoModal"
-                                    data-bs-toggle="modal"><i class="far fa-play-circle text-white"
-                                        style="font-size:20px;"></i></button>
-                                <h5>Lorem Ipsum</h5>
-                            </div>
-                        </div>
-                        <div></div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="row">
                 <div class="col text-end"><a class="btn button-all" role="button" href="portfolio.html">See All</a>

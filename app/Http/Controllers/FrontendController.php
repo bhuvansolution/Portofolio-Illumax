@@ -8,6 +8,7 @@ use App\Models\Gallery;
 use App\Models\GalleryPage;
 use App\Models\HomePage;
 use App\Models\OurPartner;
+use App\Models\OurPortofolio;
 use App\Models\OurProject;
 use App\Models\OurService;
 use App\Models\PortofolioPage;
@@ -31,7 +32,8 @@ class FrontendController extends Controller
             'partner' => OurPartner::all(),
             'ourproject' => OurProject::all(),
             'contacts' => Contact::firstOrFail(),
-            'banner' => HomePage::firstOrFail()
+            'banner' => HomePage::firstOrFail(),
+            'porto' => OurPortofolio::all()
         ]);
     }
     public function aboutus()
