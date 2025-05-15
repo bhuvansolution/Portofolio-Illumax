@@ -102,7 +102,7 @@
         </li>
         <li>
             <a href="/dashboard/gallery"
-                class="side-menu {{ Request::is('dashboard/gallery*') ? 'side-menu--active' : '' }}">
+                class="side-menu {{ Request::is('dashboard/gallery') ? 'side-menu--active' : '' }}">
                 <div class="side-menu__icon"> <i data-lucide="image"></i> </div>
                 <div class="side-menu__title"> Gallery </div>
             </a>
