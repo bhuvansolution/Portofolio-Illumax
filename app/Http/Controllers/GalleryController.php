@@ -16,17 +16,37 @@ class GalleryController extends Controller
     {
 
         $query = Gallery::query();
+        // Filter berdasarkan kategori (default ke 'gambar' jika tidak ada kategori yang dipilih)
+        if ($request->has('status')) {
+            $status = $request->input('status');
+            $query->where('status', $status);  // Pastikan field 'category' ada dalam tabel Anda
+        }
         // Menambahkan logika pencarian berdasarkan nama
         if ($request->has('search')) {
             $search = $request->input('search');
             $query->where('title', 'like', "%{$search}%");
         }
 
-
         return view('dashboard.gallery.gallery', [
             'title' => 'Data Gallery',
-            'gallery' => $query->paginate(10)->appends(['search' => $request->input('search')]),
+            'gallery' => $query->paginate(10)->appends([
+                'search' => $request->input('search'),
+                'status' => $request->input('status'),
+            ]),
         ]);
+    }
+
+    public function changeStatus($id, $status)
+    {
+        if (!in_array($status, ['Publish', 'Draft'])) {
+            abort(404);
+        }
+
+        $data = Gallery::findOrFail($id);
+        $data->status = $status;
+        $data->save();
+
+        return redirect()->back()->with('success', 'Status berhasil diperbarui.');
     }
 
     /**
@@ -45,6 +65,7 @@ class GalleryController extends Controller
 
         $validatedData = $request->validate([
             'title' => 'required',
+            'status' => 'required|in:Draft,Publish',
             'gambar' => 'required|image|mimes:jpg,png,jpeg,webp|max:5120',
         ]);
 
@@ -108,6 +129,7 @@ class GalleryController extends Controller
         $gallery = Gallery::findOrFail($id);
         $validatedData = $request->validate([
             'title' => 'required',
+            'status' => 'required|in:Draft,Publish',
             'gambar' => 'image|mimes:jpg,png,jpeg,webp|max:5120',
         ]);
 

@@ -30,7 +30,7 @@
                                     <div class="flex">
                                         <i data-lucide="image" class="report-box__icon text-primary"></i>
                                     </div>
-                                    <div class="text-3xl font-medium leading-8 mt-6 ">{{ $porto }}</div>
+                                    <div class="text-3xl font-medium leading-8 mt-6 ">{{ $gallery }}</div>
                                     <div class="text-base text-slate-500 mt-1">Jumlah Gallery</div>
                                 </div>
                             </div>

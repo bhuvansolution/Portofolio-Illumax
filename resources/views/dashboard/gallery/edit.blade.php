@@ -27,6 +27,24 @@
                                 <div class="text-danger mt-2">{{ $message }}</div>
                             @enderror
                         </div>
+                        <div class="col-span-12 sm:col-span-12"> <label for="status"
+                                class="block text-sm font-medium text-gray-700 mt-2">Status
+                            </label>
+                            <select id="status" name="status" class="form-select">
+                                <option value="Publish"
+                                    {{ old('status', $item->status) == 'Publish' ? 'selected' : '' }}>
+                                    Publish
+                                </option>
+                                <option value="Draft" {{ old('status', $item->status) == 'Draft' ? 'selected' : '' }}>
+                                    Draft
+                                </option>
+                            </select>
+                            @error('status')
+                                <div class="text-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
                         <div class="col-span-12 sm:col-span-12">
                             <label for="gambar-{{ $item->id }}" class="form-label">Upload Image</label>
                             <div class="border-2 border-dashed dark:border-darkmode-400 rounded-md pt-4">

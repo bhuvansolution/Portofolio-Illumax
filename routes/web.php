@@ -51,10 +51,19 @@ Route::controller(FrontendController::class)->group(function () {
 Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index']);
     Route::resource('/our-partner', OurPartnerController::class);
+    // our partner
+    Route::get('/our-partner/change-status/{id}/{status}', [OurPartnerController::class, 'changeStatus'])->name('partner.status');
+    // our project
     Route::resource('/our-project', OurProjectController::class);
+    Route::get('/our-project/change-status/{id}/{status}', [OurProjectController::class, 'changeStatus'])->name('project.status');
+    // our portfolio
     Route::resource('/our-portofolio', OurPortofolioController::class);
+    Route::get('/our-portofolio/change-status/{id}/{status}', [OurPortofolioController::class, 'changeStatus'])->name('portofolio.status');
+    // why choose
     Route::resource('/why-choose', WhyChooseController::class);
+    // Gallery
     Route::resource('/gallery', GalleryController::class);
+    Route::get('/gallery/change-status/{id}/{status}', [GalleryController::class, 'changeStatus'])->name('gallery.status');
     // Home Page
     Route::get('/homepage', [HomePageController::class, 'index']);
     Route::put('/homepage/{id}', [HomePageController::class, 'update']);

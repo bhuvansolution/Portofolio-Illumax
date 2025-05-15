@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('url');
+            $table->enum('status', ['Draft', 'Publish']);
             $table->string('gambar');
             $table->timestamps();
         });

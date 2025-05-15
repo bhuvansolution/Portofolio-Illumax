@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->enum('status', ['Draft', 'Publish']);
             $table->string('gambar');
             $table->timestamps();
         });

@@ -27,6 +27,25 @@
                                     <a href="/dashboard/our-portofolio/{{ $item->id }}/edit" class="dropdown-item">
                                         <i data-lucide="edit-2" class="w-4 h-4 mr-2"></i> Edit </a>
                                 </li>
+                                @if ($item->status === 'Draft')
+                                    {{-- jika sekarang Draft, tampilkan tombol Publish saja --}}
+                                    <li>
+                                        <a href="{{ route('portofolio.status', ['id' => $item->id, 'status' => 'Publish']) }}"
+                                            class="dropdown-item text-success">
+                                            <i data-lucide="check-circle" class="w-4 h-4 mr-2 text-success"></i>
+                                            Publish
+                                        </a>
+                                    </li>
+                                @elseif($item->status === 'Publish')
+                                    {{-- jika sekarang Publish, tampilkan tombol Draft saja --}}
+                                    <li>
+                                        <a href="{{ route('portofolio.status', ['id' => $item->id, 'status' => 'Draft']) }}"
+                                            class="dropdown-item text-warning">
+                                            <i data-lucide="clock" class="w-4 h-4 mr-2 text-warning"></i>
+                                            Draft
+                                        </a>
+                                    </li>
+                                @endif
                                 <li>
                                     <a href="javascript:;" data-tw-toggle="modal"
                                         data-tw-target="#delete-modal-preview-{{ $item->id }}" class="dropdown-item">

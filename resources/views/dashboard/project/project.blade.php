@@ -9,8 +9,8 @@
             <div class="intro-y box p-5 mt-6">
                 <div class="border-t border-slate-200 dark:border-darkmode-400 mt-4 pt-4"></div>
                 <div class="mt-1">
-                    <a href="/dashboard/project"
-                        class="flex items-center px-3 py-2 rounded-md {{ request('category') == null ? 'bg-primary text-white font-medium' : '' }}">
+                    <a href="/dashboard/our-project"
+                        class="flex items-center px-3 py-2 rounded-md {{ request('status') == null ? 'bg-primary text-white font-medium' : '' }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" class="lucide lucide-images w-4 h-4 mr-2">
@@ -19,12 +19,12 @@
                             <circle cx="12" cy="8" r="2" />
                             <rect width="16" height="16" x="6" y="2" rx="2" />
                         </svg> ALL </a>
-                    {{-- <a href="/dashboard/project?category=gambar"
-                        class="flex items-center px-3 py-2 rounded-md {{ request('category') == 'gambar' ? 'bg-primary text-white font-medium' : '' }}">
-                        <i class="w-4 h-4 mr-2" data-lucide="image"></i> Images </a>
-                    <a href="/dashboard/project?category=video"
-                        class="flex items-center px-3 py-2 mt-2 rounded-md {{ request('category') == 'video' ? 'bg-primary text-white font-medium' : '' }}">
-                        <i class="w-4 h-4 mr-2" data-lucide="video"></i> Videos </a> --}}
+                    <a href="/dashboard/our-project?status=Publish"
+                        class="flex items-center px-3 py-2 rounded-md {{ request('status') == 'Publish' ? 'bg-primary text-white font-medium' : '' }}">
+                        <i class="w-4 h-4 mr-2" data-lucide="check-circle"></i> Publish </a>
+                    <a href="/dashboard/our-project?status=Draft"
+                        class="flex items-center px-3 py-2 mt-2 rounded-md {{ request('status') == 'Draft' ? 'bg-primary text-white font-medium' : '' }}">
+                        <i class="w-4 h-4 mr-2" data-lucide="clock"></i> Draft </a>
                 </div>
                 <div class="border-t border-slate-200 dark:border-darkmode-400 mt-4 pt-4"></div>
             </div>
@@ -73,11 +73,30 @@
                                                 data-tw-target="#edit-{{ $item->id }}" class="dropdown-item">
                                                 <i data-lucide="edit" class="w-4 h-4 mr-2"></i> Edit </a>
                                         </li>
+                                        @if ($item->status === 'Draft')
+                                            {{-- jika sekarang Draft, tampilkan tombol Publish saja --}}
+                                            <li>
+                                                <a href="{{ route('project.status', ['id' => $item->id, 'status' => 'Publish']) }}"
+                                                    class="dropdown-item text-success">
+                                                    <i data-lucide="check-circle" class="w-4 h-4 mr-2 text-success"></i>
+                                                    Publish
+                                                </a>
+                                            </li>
+                                        @elseif($item->status === 'Publish')
+                                            {{-- jika sekarang Publish, tampilkan tombol Draft saja --}}
+                                            <li>
+                                                <a href="{{ route('project.status', ['id' => $item->id, 'status' => 'Draft']) }}"
+                                                    class="dropdown-item text-warning">
+                                                    <i data-lucide="clock" class="w-4 h-4 mr-2 text-warning"></i>
+                                                    Draft
+                                                </a>
+                                            </li>
+                                        @endif
                                         <li>
                                             <a href="javascript:;" data-tw-toggle="modal"
                                                 data-tw-target="#delete-modal-preview-{{ $item->id }}"
-                                                class="dropdown-item">
-                                                <i data-lucide="trash" class="w-4 h-4 mr-2"></i>
+                                                class="dropdown-item text-danger">
+                                                <i data-lucide="trash" class="w-4 h-4 mr-2 text-danger"></i>
                                                 Delete
                                             </a>
                                         </li>

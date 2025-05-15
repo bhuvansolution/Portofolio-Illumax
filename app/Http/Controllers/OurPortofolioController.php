@@ -22,15 +22,31 @@ class OurPortofolioController extends Controller
             $search = $request->input('search');
             $query->where('title', 'like', "%{$search}%");
         }
-
+        if ($request->has('status')) {
+            $status = $request->input('status');
+            $query->where('status', $status);
+        }
         $info = $query->paginate(10);
 
         return view('dashboard.portofolio.portofolio', [
             'title' => 'Portofolio',
             'portofolio' => $info->appends([
                 'search' => $request->input('search'),
+                'status' => $request->input('status'),
             ]),
         ]);
+    }
+    public function changeStatus($id, $status)
+    {
+        if (!in_array($status, ['Publish', 'Draft'])) {
+            abort(404);
+        }
+
+        $data = OurPortofolio::findOrFail($id);
+        $data->status = $status;
+        $data->save();
+
+        return redirect()->back()->with('success', 'Status berhasil diperbarui.');
     }
 
     /**
@@ -55,6 +71,7 @@ class OurPortofolioController extends Controller
             'gambar' => 'required|image|mimes:jpg,png,jpeg,webp|max:5120',
             'video' => 'required|mimes:mp4,mov,ogg,qt,webm|max:51200',
             'description' => 'required',
+            'status' => 'required|in:Draft,Publish',
         ]);
 
         if ($request->hasFile('gambar')) {
@@ -134,6 +151,7 @@ class OurPortofolioController extends Controller
             'description' => 'required',
             'slug' => 'required|unique:our_portofolios,slug,' . $id,
             'gambar' => 'image|mimes:jpg,png,jpeg,webp|max:5120',
+            'status' => 'required|in:Draft,Publish',
         ]);
 
         try {

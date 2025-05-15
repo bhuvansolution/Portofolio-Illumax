@@ -20,12 +20,31 @@ class OurPartnerController extends Controller
             $search = $request->input('search');
             $query->where('title', 'like', "%{$search}%");
         }
-
+        if ($request->has('status')) {
+            $status = $request->input('status');
+            $query->where('status', $status);
+        }
 
         return view('dashboard.partner.partner', [
             'title' => 'Data Our Partner',
-            'partner' => $query->paginate(10)->appends(['search' => $request->input('search')]),
+            'partner' => $query->paginate(10)->appends([
+                'search' => $request->input('search'),
+                'status' => $request->input('status'),
+            ]),
         ]);
+    }
+
+    public function changeStatus($id, $status)
+    {
+        if (!in_array($status, ['Publish', 'Draft'])) {
+            abort(404);
+        }
+
+        $data = OurPartner::findOrFail($id);
+        $data->status = $status;
+        $data->save();
+
+        return redirect()->back()->with('success', 'Status berhasil diperbarui.');
     }
 
     /**
@@ -44,6 +63,7 @@ class OurPartnerController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'url' => 'required',
+            'status' => 'required|in:Draft,Publish',
             'gambar' => 'required|image|mimes:jpg,png,jpeg,webp|max:5120',
         ]);
 
@@ -107,6 +127,7 @@ class OurPartnerController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'url' => 'required',
+            'status' => 'required|in:Draft,Publish',
             'gambar' => 'image|mimes:jpg,png,jpeg,webp|max:5120',
         ]);
 
