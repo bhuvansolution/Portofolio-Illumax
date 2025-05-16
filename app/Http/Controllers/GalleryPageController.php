@@ -9,16 +9,6 @@ use Illuminate\Support\Facades\File;
 class GalleryPageController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        return view('dashboard.gallerypage.gallerypage', [
-            'title' => 'Gallery Page',
-            'gallery' => GalleryPage::firstOrFail()
-        ]);
-    }
-    /**
      * Update the specified resource in storage.
      */
     public function update(Request $request,  $id)
@@ -67,13 +57,13 @@ class GalleryPageController extends Controller
 
             GalleryPage::where('id', $id)->update($validatedData);
 
-            return redirect('/dashboard/gallerypage')->with('success', 'Berhasil di Update');
+            return redirect('/dashboard/gallery')->with('success', 'Berhasil di Update');
         } catch (\Exception $e) {
             // Hapus file yang sudah diupload jika terjadi error
             if (file_exists(public_path('assets/images/gallerypage/' . $nama_gambar))) {
                 unlink(public_path('assets/images/gallerypage/' . $nama_gambar));
             }
-            return redirect('/dashboard/gallerypage')->with('error', 'Terjadi kesalahan, Silahkan coba lagi.');
+            return redirect('/dashboard/gallery')->with('error', 'Terjadi kesalahan, Silahkan coba lagi.');
         }
     }
 }

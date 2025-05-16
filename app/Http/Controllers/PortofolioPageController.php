@@ -8,17 +8,6 @@ use Illuminate\Support\Facades\File;
 
 class PortofolioPageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        return view('dashboard.portfoliopage.portfoliopage', [
-            'title' => 'Portfolio Page',
-            'porto' => PortofolioPage::firstOrFail()
-        ]);
-    }
-
     public function update(Request $request,  $id)
     {
         $file = PortofolioPage::where('id', $id)->firstOrFail();
@@ -61,13 +50,13 @@ class PortofolioPageController extends Controller
 
             PortofolioPage::where('id', $id)->update($validatedData);
 
-            return redirect('/dashboard/portofolio-page')->with('success', 'Berhasil di Update');
+            return redirect('/dashboard/our-portofolio')->with('success', 'Berhasil di Update');
         } catch (\Exception $e) {
             // Hapus file yang sudah diupload jika terjadi error
             if (file_exists(public_path('assets/images/portopage/' . $nama_gambar))) {
                 unlink(public_path('assets/images/portopage/' . $nama_gambar));
             }
-            return redirect('/dashboard/portofolio-page')->with('error', 'Terjadi kesalahan, Silahkan coba lagi.');
+            return redirect('/dashboard/our-portofolio')->with('error', 'Terjadi kesalahan, Silahkan coba lagi.');
         }
     }
 }

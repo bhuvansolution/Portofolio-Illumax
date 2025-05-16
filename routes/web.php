@@ -77,9 +77,7 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     Route::get('/aboutus', [AboutusController::class, 'index']);
     Route::put('/aboutus/{id}', [AboutusController::class, 'update']);
     // Gallery Page
-    Route::get('/gallerypage', [GalleryPageController::class, 'index']);
     Route::put('/gallerypage/{id}', [GalleryPageController::class, 'update']);
     // Porto Page
-    Route::get('/portofolio-page', [PortofolioPageController::class, 'index']);
     Route::put('/portofolio-page/{id}', [PortofolioPageController::class, 'update']);
 });

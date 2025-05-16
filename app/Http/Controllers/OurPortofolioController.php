@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\OurPortofolio;
+use App\Models\PortofolioPage;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Facades\DB;
@@ -30,6 +31,7 @@ class OurPortofolioController extends Controller
 
         return view('dashboard.portofolio.portofolio', [
             'title' => 'Portofolio',
+            'porto' => PortofolioPage::firstOrFail(),
             'portofolio' => $info->appends([
                 'search' => $request->input('search'),
                 'status' => $request->input('status'),
@@ -56,7 +58,7 @@ class OurPortofolioController extends Controller
     {
         return view('dashboard.portofolio.add', [
             'title' => 'Add Portofolio',
-            'portofolio' => OurPortofolio::all()
+            'portofolio' => OurPortofolio::all(),
         ]);
     }
 

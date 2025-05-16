@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gallery;
+use App\Models\GalleryPage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -29,6 +30,7 @@ class GalleryController extends Controller
 
         return view('dashboard.gallery.gallery', [
             'title' => 'Data Gallery',
+            'gallerys' => GalleryPage::firstOrFail(),
             'gallery' => $query->paginate(10)->appends([
                 'search' => $request->input('search'),
                 'status' => $request->input('status'),

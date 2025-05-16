@@ -36,20 +36,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/dashboard/gallerypage"
-                        class="side-menu {{ Request::is('dashboard/gallerypage*') ? 'side-menu--active' : '' }}">
-                        <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="side-menu__title">Gallery Page</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/dashboard/portofolio-page"
-                        class="side-menu {{ Request::is('dashboard/portofolio-page*') ? 'side-menu--active' : '' }}">
-                        <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="side-menu__title">Portofolio Page</div>
-                    </a>
-                </li>
-                <li>
                     <a href="/dashboard/aboutus"
                         class="side-menu {{ Request::is('dashboard/aboutus*') ? 'side-menu--active' : '' }}">
                         <div class="side-menu__icon"> <i data-lucide="activity"></i> </div>
