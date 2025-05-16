@@ -77,7 +77,7 @@
                                                     <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Edit </a>
                                                 <a class="flex items-center text-danger" href="javascript:;"
                                                     data-tw-toggle="modal"
-                                                    data-tw-target="#delete-confirmation-modal{{ $item->id }}"> <i
+                                                    data-tw-target="#delete-modal-preview-{{ $item->id }}"> <i
                                                         data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete </a>
                                             </div>
                                         </td>
@@ -376,8 +376,8 @@
     <!-- END: Pagination -->
 
     <!-- BEGIN: Modal delete -->
-    @foreach ($portofolio as $item)
-        <div id="delete-modal-preview-{{ $item->id }}" class="modal" tabindex="-1" aria-hidden="true">
+    @foreach ($portofolio as $as)
+        <div id="delete-modal-preview-{{ $as->id }}" class="modal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-body p-0">
@@ -391,7 +391,7 @@
                         </div>
                         <div class="px-5 pb-8 text-center">
 
-                            <form action="/dashboard/our-portofolio/{{ $item->id }}" method="post">
+                            <form action="/dashboard/our-portofolio/{{ $as->id }}" method="post">
                                 @method('DELETE')
                                 @csrf
                                 <button type="button" data-tw-dismiss="modal"
