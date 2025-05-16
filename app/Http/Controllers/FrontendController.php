@@ -29,11 +29,11 @@ class FrontendController extends Controller
             'title' => 'Home ',
             'aboutus' => Aboutus::firstOrFail(),
             'ourservice' => $ourservice,
-            'partner' => OurPartner::all(),
-            'ourproject' => OurProject::all(),
+            'partner' => OurPartner::where('status', 'Publish')->get(),
+            'ourproject' => OurProject::where('status', 'Publish')->get(),
             'contacts' => Contact::firstOrFail(),
             'banner' => HomePage::firstOrFail(),
-            'porto' => OurPortofolio::all()
+            'porto' => OurPortofolio::where('status', 'Publish')->get(),
         ]);
     }
     public function aboutus()
@@ -78,7 +78,7 @@ class FrontendController extends Controller
     {
         return view('home.gallery', [
             'title' => 'Gallery ',
-            'gallery' => Gallery::all(),
+            'gallery' => Gallery::where('status', 'Publish')->get(),
             'contacts' => Contact::firstOrFail(),
             'gallerypage' => GalleryPage::firstOrFail(),
         ]);
