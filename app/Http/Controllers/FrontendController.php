@@ -20,15 +20,22 @@ class FrontendController extends Controller
     public function index()
     {
         $ourservice = OurService::firstOrFail();
-
         $ourservice->title = json_decode($ourservice->title);
         $ourservice->description = json_decode($ourservice->description);
         $ourservice->engtitle = json_decode($ourservice->engtitle);
         $ourservice->engdescription = json_decode($ourservice->engdescription);
+
+        $whychoose = WhyChoose::firstOrFail();
+        $whychoose->gambar = json_decode($whychoose->gambar);
+        $whychoose->title = json_decode($whychoose->title);
+        $whychoose->description = json_decode($whychoose->description);
+        $whychoose->engtitle = json_decode($whychoose->engtitle);
+        $whychoose->engdescription = json_decode($whychoose->engdescription);
         return view('home.index', [
             'title' => 'Home ',
             'aboutus' => Aboutus::firstOrFail(),
             'ourservice' => $ourservice,
+            'whychoose' => $whychoose,
             'partner' => OurPartner::where('status', 'Publish')->get(),
             'ourproject' => OurProject::where('status', 'Publish')->get(),
             'contacts' => Contact::firstOrFail(),

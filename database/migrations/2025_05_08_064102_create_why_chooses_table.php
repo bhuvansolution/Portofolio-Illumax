@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('why_chooses', function (Blueprint $table) {
             $table->id();
+            $table->json('gambar')->nullable(); // Kolom untuk menyimpan data alamat brand
             $table->json('title')->nullable(); // Kolom untuk menyimpan data alamat brand
             $table->json('description')->nullable();
             $table->json('engtitle')->nullable(); // Kolom untuk menyimpan data alamat brand

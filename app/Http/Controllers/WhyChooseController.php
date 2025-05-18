@@ -18,6 +18,7 @@ class WhyChooseController extends Controller
         $whychoose->description = json_decode($whychoose->description);
         $whychoose->engtitle = json_decode($whychoose->engtitle);
         $whychoose->engdescription = json_decode($whychoose->engdescription);
+        $whychoose->gambar = json_decode($whychoose->gambar);
         return view('dashboard.whychoose.whychoose', [
             'title' => ' Why Choose',
             'whychoose' => $whychoose
@@ -31,23 +32,39 @@ class WhyChooseController extends Controller
             'description.*' => 'nullable',
             'engtitle.*' => 'nullable',
             'engdescription.*' => 'nullable',
+            'gambar' => 'nullable|array',
+            'gambar.*' => 'image|mimes:jpg,jpeg,png,gif|max:2048',
         ]);
 
-        // Filter input yang kosong
-        $filteredtitle = array_filter($request->title, function ($value) {
-            return !is_null($value) && $value !== '';
-        });
+        $whyChoose = WhyChoose::findOrFail($id);
 
-        $filtereddescription = array_filter($request->description, function ($value) {
-            return !is_null($value) && $value !== '';
-        });
+        // Ambil gambar lama dari database
+        $oldgambar = $whyChoose->gambar ? json_decode($whyChoose->gambar, true) : [];
 
-        // Gunakan hasil filter
-        $validatedData['title'] = json_encode(array_values($filteredtitle));
-        $validatedData['description'] = json_encode(array_values($filtereddescription));
+        // Proses upload gambar baru
+        $newgambar = [];
+        if ($request->hasFile('gambar')) {
+            foreach ($request->file('gambar') as $gambar) {
+                if ($gambar->isValid()) {
+                    $filename = time() . '_' . $gambar->getClientOriginalName();
+                    $gambar->move(public_path('assets/images/whychoose'), $filename);
+                    $newgambar[] = $filename;
+                }
+            }
+        }
+
+        // Gabungkan gambar lama dan baru
+        $allImages = array_merge($oldgambar, $newgambar);
+        $validatedData['gambar'] = json_encode($allImages);
+
+        // Filter data lainnya
+        $validatedData['title'] = json_encode(array_values(array_filter($request->title, fn($v) => !is_null($v) && $v !== '')));
+        $validatedData['description'] = json_encode(array_values(array_filter($request->description, fn($v) => !is_null($v) && $v !== '')));
+        $validatedData['engtitle'] = json_encode(array_values(array_filter($request->engtitle, fn($v) => !is_null($v) && $v !== '')));
+        $validatedData['engdescription'] = json_encode(array_values(array_filter($request->engdescription, fn($v) => !is_null($v) && $v !== '')));
 
         try {
-            WhyChoose::where('id', $id)->update($validatedData);
+            $whyChoose->update($validatedData);
             return redirect('/dashboard/why-choose')->with('success', 'Berhasil di Update');
         } catch (\Exception $e) {
             return redirect('/dashboard/why-choose')->with('error', 'Terjadi kesalahan, Silahkan coba lagi.');
