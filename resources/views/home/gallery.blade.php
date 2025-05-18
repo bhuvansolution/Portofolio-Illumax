@@ -73,8 +73,11 @@
                 <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center">
                     <div class="card-git">
                         <h4 class="text-uppercase text-center mt-5" style="font-family: Actor, sans-serif;">
-                            {!! strip_tags($gallerypage->quote, '<br>') !!}</h4><button class="btn btn-git" type="button">Get in&nbsp;
-                            Touch</button>
+                            {!! strip_tags($gallerypage->quote, '<br>') !!}</h4>
+                        <a href="/contacts">
+                            <button class="btn btn-git" type="button">Get in&nbsp;
+                                Touch</button>
+                        </a>
                     </div>
                 </div>
             </div>

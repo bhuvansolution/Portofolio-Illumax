@@ -83,7 +83,7 @@
                         <h1 class="judul-content-service" style="font-family: Aldrich, sans-serif;font-size: 60px;">
                             Why
                             <br>Choose Us
-                        </h1><a class="btn btn-git" role="button" href="contact.html">Get In Touch</a>
+                        </h1><a class="btn btn-git" role="button" href="/contacts">Get In Touch</a>
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-6 col-xl-8 col-xxl-8">
                         <div class="row">
@@ -282,7 +282,7 @@
                 @endforeach
             </div>
             <div class="row">
-                <div class="col text-end"><a class="btn button-all" role="button" href="">See All</a>
+                <div class="col text-end"><a class="btn button-all" role="button" href="/portfolio">See All</a>
                 </div>
             </div>
         </div>
