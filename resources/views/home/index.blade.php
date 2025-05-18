@@ -26,21 +26,21 @@
     <div class="simple-slider position-relative">
         <!-- Teks Tetap di Atas -->
         <div class="text-center text-white slider-title position-absolute w-100" style="z-index: 10; top: 30%;">
-            <h1 class="fw-bold">Selamat Datang di Website Kami</h1>
-            <p>Temukan informasi terbaik di sini</p>
+            <h1 class="fw-bold" style="text-align:left;">Selamat Datang di Website Kami</h1>
+            <p style="text-align:left;">Temukan informasi terbaik di sini</p>
         </div>
 
         <!-- Swiper -->
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 @forelse (json_decode($banner->gambar) as $index => $gambar)
-                    <div class="swiper-slide"
+                    <div class="swiper-slide slider-home"
                         style="background: url('{{ asset('/assets/images/banner/' . $gambar) }}') center center / cover no-repeat;">
                     </div>
                 @empty
                     <div class="swiper-slide"
-                        style="background: #ccc; display: flex; align-items: center; justify-content: center;">
-                        <p>Tidak ada gambar tersedia</p>
+                        style="background: #ccc; display: flex; align-items: center; justify-content: left;">
+                        <p style="text-align: left;">Tidak ada gambar tersedia</p>
                     </div>
                 @endforelse
             </div>
@@ -59,8 +59,10 @@
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
                     <div><img class="img-fluid image-about-us1" alt="woman wearing sunglasses"
                             src="assets/img/photo-1562572159-4efc207f5aff.jpg"></div>
-                    <div><img class="img-fluid image-about-us2" alt="woman posing beside lite window"
-                            src="assets/img/photo-1532800783378-1bed60adaf58.jpg"></div>
+                    <div>
+                        <img class="img-fluid image-about-us2" alt="woman posing beside lite window"
+                            src="assets/img/photo-1532800783378-1bed60adaf58.jpg">
+                    </div>
                 </div>
                 <div
                     class="col-sm-12 col-md-12 col-lg-12 col-xl-6 d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center">

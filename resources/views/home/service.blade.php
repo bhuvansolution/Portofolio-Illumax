@@ -50,7 +50,7 @@
                             <div class="text-center d-flex flex-column align-items-center align-items-xl-center">
                                 <div
                                     class="bs-icon-lg d-inline-block flex-shrink-0 justify-content-center align-items-center mb-3 bs-icon lg icon-service">
-                                    <i class="fas fa-photo-video"></i>
+                                    <img src="" class="image-service-top img-flui">
                                 </div>
                                 <div class="px-3">
                                     <h5>Video Editing</h5>
@@ -61,7 +61,7 @@
                             <div class="text-center d-flex flex-column align-items-center align-items-xl-center">
                                 <div
                                     class="bs-icon-lg d-inline-block flex-shrink-0 justify-content-center align-items-center mb-3 bs-icon lg icon-service">
-                                    <i class="fas fa-users-cog" style="font-size: 32px;"></i>
+                                    <img src="" class="image-service-top img-flui">
                                 </div>
                                 <div class="px-3">
                                     <h5>Cammeramen</h5>
@@ -72,7 +72,7 @@
                             <div class="text-center d-flex flex-column align-items-center align-items-xl-center">
                                 <div
                                     class="bs-icon-lg d-inline-block flex-shrink-0 justify-content-center align-items-center mb-3 bs-icon lg icon-service">
-                                    <i class="fas fa-video" style="font-size: 32px;"></i>
+                                    <img src="" class="image-service-top img-flui">
                                 </div>
                                 <div class="px-3">
                                     <h5>Video Graphing</h5>
@@ -83,7 +83,7 @@
                             <div class="text-center d-flex flex-column align-items-center align-items-xl-center">
                                 <div
                                     class="bs-icon-lg d-inline-block flex-shrink-0 justify-content-center align-items-center mb-3 bs-icon lg icon-service">
-                                    <i class="fas fa-tags" style="font-size: 32px;"></i>
+                                    <img src="" class="image-service-top img-flui">
                                 </div>
                                 <div class="px-3">
                                     <h5>Branding</h5>

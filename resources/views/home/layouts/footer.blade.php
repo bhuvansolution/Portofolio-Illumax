@@ -2,12 +2,14 @@
     <div class="container py-4 py-lg-5">
         <div class="row">
             <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
-                <h3 class="fs-6 fw-bold">Services</h3>
+                <h3 class="fs-6 fw-bold">Illumax</h3>
                 <ul class="list-unstyled">
-                    <li><a href="#">Companny Profile</a></li>
-                    <li><a href="#">Commercial Video</a></li>
-                    <li><a href="#">Filler / Documentari</a></li>
-                    <li><a href="#">Animation &amp; Motion Graphic</a></li>
+                    <li><a href="#">Abous Us</a></li>
+                    <li><a href="#">Our Service</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Contact</a></li>
+
                 </ul>
             </div>
             <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">

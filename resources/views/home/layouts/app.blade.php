@@ -11,6 +11,11 @@
 <body style="font-family: Actor, sans-serif;">
     @include('home.layouts.navbar')
 
+    <div class="whatsapp-float">
+        <a href="https://wa.me/628123456789" target="_blank" class="btn btn-lg">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
     @yield('container')
 
     @include('home.layouts.footer')
