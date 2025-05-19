@@ -35,10 +35,10 @@ class AboutusController extends Controller
             'engjudul' => 'required',
             'engdescription' => 'required',
             'engtextbawah' => 'required',
-            'banneratas' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
-            'gambar1' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
-            'bannerbawah' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
+            'banneratas' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'gambar1' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'bannerbawah' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
         try {

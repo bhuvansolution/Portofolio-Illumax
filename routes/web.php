@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutusController;
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
@@ -12,7 +13,9 @@ use App\Http\Controllers\OurPartnerController;
 use App\Http\Controllers\OurPortofolioController;
 use App\Http\Controllers\OurProjectController;
 use App\Http\Controllers\OurServiceController;
+use App\Http\Controllers\PesanController;
 use App\Http\Controllers\PortofolioPageController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\WhyChooseController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +31,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/dashboard/our-portofolio/checkslug', [OurPortofolioController::class, 'checkslug']);
+Route::get('/dashboard/artikel/checkslug', [ArtikelController::class, 'checkslug']);
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'index')->name('login');
@@ -47,9 +51,11 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('/gallery', 'gallery');
 });
 
+Route::post('/dashboard/pesan', [PesanController::class, 'store']);
 // Home
 Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index']);
+    Route::resource('/user-management', UserController::class);
     Route::resource('/our-partner', OurPartnerController::class);
     // our partner
     Route::get('/our-partner/change-status/{id}/{status}', [OurPartnerController::class, 'changeStatus'])->name('partner.status');
@@ -80,4 +86,8 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     Route::put('/gallerypage/{id}', [GalleryPageController::class, 'update']);
     // Porto Page
     Route::put('/portofolio-page/{id}', [PortofolioPageController::class, 'update']);
+    // artikel
+    Route::resource('/artikel', ArtikelController::class);
+    Route::get('/pesan', [PesanController::class, 'index']);
+    Route::delete('/pesan/delete-selected', [PesanController::class, 'deleteSelected'])->name('pesan.delete.selected');
 });

@@ -20,6 +20,11 @@ return new class extends Migration
             $table->string('gambar')->nullable();
             $table->string('textatas')->nullable();
             $table->string('engtextatas')->nullable();
+            $table->string('brand')->nullable();
+            $table->string('engbrand')->nullable();
+            $table->json('icon')->nullable(); // Kolom untuk menyimpan data alamat brand
+            $table->json('text')->nullable();
+            $table->json('engtext')->nullable();
             $table->timestamps();
         });
     }

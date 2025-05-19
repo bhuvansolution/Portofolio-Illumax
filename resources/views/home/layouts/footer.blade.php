@@ -4,33 +4,28 @@
             <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
                 <h3 class="fs-6 fw-bold">Illumax</h3>
                 <ul class="list-unstyled">
-                    <li><a href="#">Abous Us</a></li>
-                    <li><a href="#">Our Service</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="/aboutus">Abous Us</a></li>
+                    <li><a href="/services">Our Service</a></li>
+                    <li><a href="/portfolio">Portfolio</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/contacts">Contacts</a></li>
 
                 </ul>
             </div>
             <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column">
-                <h3 class="fs-6 fw-bold">About</h3>
-                <ul class="list-unstyled">
-                    <li><a href="#">Company</a></li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">Legacy</a></li>
-                </ul>
+
             </div>
             <div
                 class="col-lg-3 text-center text-lg-start d-flex flex-column align-items-center order-first align-items-lg-start order-lg-last">
                 <div class="fw-bold d-flex align-items-center mb-2"><span
                         class="d-flex justify-content-center align-items-center me-2"><img class="img-fluid logo-footer"
                             src="assets/img/illumax-logo-gold-removebg-preview.png"></span></div>
-                <p class="text-muted">Sem eleifend donec molestie, integer quisque orci aliquam.</p>
+                <p class="text-muted">{!! Str::of(strip_tags($about->description, '<br>'))->explode('<br>')->filter()->first() !!}</p>
             </div>
         </div>
         <hr>
         <div class="text-muted d-flex justify-content-between align-items-center pt-3">
-            <p class="mb-0">Copyright © 2025 Brand</p>
+            <p class="mb-0">Copyright © 2025 Illumax</p>
             <ul class="list-inline mb-0">
                 <li class="list-inline-item">
                     <a href="{{ $contacts->facebook }}" target="_blank">

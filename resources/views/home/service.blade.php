@@ -42,54 +42,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-4">
-                    <h3>Supporting Digital Business Branding Agencies Privat Documentaries</h3>
+                    <h3>{{ $ourservice->brand }}</h3>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-8">
                     <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-3">
-                            <div class="text-center d-flex flex-column align-items-center align-items-xl-center">
-                                <div
-                                    class="bs-icon-lg d-inline-block flex-shrink-0 justify-content-center align-items-center mb-3 bs-icon lg icon-service">
-                                    <img src="" class="image-service-top img-flui">
-                                </div>
-                                <div class="px-3">
-                                    <h5>Video Editing</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-lg-3">
-                            <div class="text-center d-flex flex-column align-items-center align-items-xl-center">
-                                <div
-                                    class="bs-icon-lg d-inline-block flex-shrink-0 justify-content-center align-items-center mb-3 bs-icon lg icon-service">
-                                    <img src="" class="image-service-top img-flui">
-                                </div>
-                                <div class="px-3">
-                                    <h5>Cammeramen</h5>
+                        @foreach ($ourservice->icon as $key => $icon)
+                            <div class="col-sm-12 col-md-12 col-lg-3">
+                                <div class="text-center d-flex flex-column align-items-center align-items-xl-center">
+                                    <div
+                                        class="bs-icon-lg d-inline-block flex-shrink-0 justify-content-center align-items-center mb-3 bs-icon lg icon-service">
+                                        <img src="/assets/images/service/{{ $icon }}"
+                                            class="image-service-top img-flui" alt="{{ $ourservice->text[$key] }}">
+                                    </div>
+                                    <div class="px-3">
+                                        <h5>{{ $ourservice->text[$key] }}</h5>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-lg-3">
-                            <div class="text-center d-flex flex-column align-items-center align-items-xl-center">
-                                <div
-                                    class="bs-icon-lg d-inline-block flex-shrink-0 justify-content-center align-items-center mb-3 bs-icon lg icon-service">
-                                    <img src="" class="image-service-top img-flui">
-                                </div>
-                                <div class="px-3">
-                                    <h5>Video Graphing</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-lg-3">
-                            <div class="text-center d-flex flex-column align-items-center align-items-xl-center">
-                                <div
-                                    class="bs-icon-lg d-inline-block flex-shrink-0 justify-content-center align-items-center mb-3 bs-icon lg icon-service">
-                                    <img src="" class="image-service-top img-flui">
-                                </div>
-                                <div class="px-3">
-                                    <h5>Branding</h5>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -147,7 +117,7 @@
                                 href="Instagram.com">{{ $contacts->instagram }}</a>
                         </li>
                         <li class="list-inline-item link-contact"><a class="link-contact"
-                                href="https://wa.me/6281234567890">+6281908710689</a></li>
+                                href="https://wa.me/6281234567890">{{ $contacts->phone }}</a></li>
                     </ul>
                 </div>
             </div>

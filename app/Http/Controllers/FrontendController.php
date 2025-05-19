@@ -41,6 +41,7 @@ class FrontendController extends Controller
             'contacts' => Contact::firstOrFail(),
             'banner' => HomePage::firstOrFail(),
             'porto' => OurPortofolio::where('status', 'Publish')->get(),
+            'about' => Aboutus::firstOrFail(),
         ]);
     }
     public function aboutus()
@@ -59,10 +60,14 @@ class FrontendController extends Controller
         $ourservice->description = json_decode($ourservice->description);
         $ourservice->engtitle = json_decode($ourservice->engtitle);
         $ourservice->engdescription = json_decode($ourservice->engdescription);
+        $ourservice->text = json_decode($ourservice->text);
+        $ourservice->engtext = json_decode($ourservice->engtext);
+        $ourservice->icon = json_decode($ourservice->icon);
         return view('home.service', [
             'title' => 'Services ',
             'ourservice' => $ourservice,
             'contacts' => Contact::firstOrFail(),
+            'about' => Aboutus::firstOrFail(),
         ]);
     }
 
@@ -71,6 +76,7 @@ class FrontendController extends Controller
         return view('home.contacts', [
             'title' => 'Contacts ',
             'contacts' => Contact::firstOrFail(),
+            'about' => Aboutus::firstOrFail(),
         ]);
     }
     public function portofolio()
@@ -79,6 +85,9 @@ class FrontendController extends Controller
             'title' => 'Portfolio ',
             'contacts' => Contact::firstOrFail(),
             'portopage' => PortofolioPage::firstOrFail(),
+            'porto' => OurPortofolio::where('status', 'Publish')->paginate(12),
+            'news' => OurPortofolio::where('status', 'Publish')->orderBy('created_at', 'desc')->first(),
+            'about' => Aboutus::firstOrFail(),
         ]);
     }
     public function gallery()
@@ -88,6 +97,7 @@ class FrontendController extends Controller
             'gallery' => Gallery::where('status', 'Publish')->get(),
             'contacts' => Contact::firstOrFail(),
             'gallerypage' => GalleryPage::firstOrFail(),
+            'about' => Aboutus::firstOrFail(),
         ]);
     }
 }

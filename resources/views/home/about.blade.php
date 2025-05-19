@@ -54,11 +54,11 @@
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6 p-4">
                     <div class="row d-xxl-flex align-items-xxl-center">
                         <div class="col">
-                            <div><img class="img-fluid image-about-us4" alt="woman wearing sunglasses"
+                            <div><img class="img-fluid image-about-us4" alt="aboutus"
                                     src="/assets/images/aboutus/{{ $about->gambar }}"></div>
                         </div>
                         <div class="col">
-                            <div><img class="img-fluid image-about-us3" alt="woman holding heft long blonde hair"
+                            <div><img class="img-fluid image-about-us3" alt="aboutus"
                                     src="/assets/images/aboutus/{{ $about->gambar1 }}"></div>
                         </div>
                     </div>

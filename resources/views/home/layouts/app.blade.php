@@ -4,8 +4,29 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link href="/assets/images/illumax-icon.png" rel="shortcut icon">
     <title>{{ $title }} - Illumax</title>
+    <meta name="keywords" content="illumax">
+    <link rel="canonical" href="{{ url()->current() }}">
+    <meta property="og:title" content="{{ $title }}">
+    <meta property="og:description" content="{!! Str::of(strip_tags($about->description, '<br>'))->explode('<br>')->filter()->first() !!}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="website">
+    <meta name="description" content="{!! Str::of(strip_tags($about->description, '<br>'))->explode('<br>')->filter()->first() !!}">
+
     @stack('css')
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL2MT0QL26"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZL2MT0QL26');
+    </script>
 </head>
 
 <body style="font-family: Actor, sans-serif;">

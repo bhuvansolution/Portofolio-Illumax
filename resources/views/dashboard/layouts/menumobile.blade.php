@@ -21,6 +21,12 @@
             </li>
             <li class="menu__devider my-3"></li>
             <li>
+                <a href="/dashboard/user-management" class="menu">
+                    <div class="menu__icon"> <i data-lucide="folder"></i> </div>
+                    <div class="menu__title"> User Management </div>
+                </a>
+            </li>
+            <li>
                 <a href="javascript:;" class="menu">
                     <div class="menu__icon"> <i data-lucide="layers"></i> </div>
                     <div class="menu__title"> Menu Home <i data-lucide="chevron-down" class="menu__sub-icon "></i>
@@ -83,7 +89,18 @@
                     <div class="menu__title"> Gallery </div>
                 </a>
             </li>
-
+            <li>
+                <a href="/dashboard/artikel" class="menu">
+                    <div class="menu__icon"> <i data-lucide="file-text"></i> </div>
+                    <div class="menu__title"> Artikel </div>
+                </a>
+            </li>
+            <li>
+                <a href="/dashboard/pesan" class="menu">
+                    <div class="menu__icon"> <i data-lucide="message-square"></i> </div>
+                    <div class="menu__title"> Pesan </div>
+                </a>
+            </li>
             <li class="menu__devider my-3"></li>
         </ul>
     </div>

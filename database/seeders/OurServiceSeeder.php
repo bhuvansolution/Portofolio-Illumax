@@ -15,13 +15,18 @@ class OurServiceSeeder extends Seeder
     public function run(): void
     {
         OurService::firstOrCreate([], [
-            'gambar' => 'service.jpg',
+            'brand' => 'Mendukung Agensi Branding Bisnis Digital Dokumenter Privat',
+            'engbrand' => 'Supporting Digital Business Branding Agencies Privat Documentaries',
+            'gambar' => 'service.jpeg',
             'textatas' => 'Mengubah kreativitas menjadi media untuk menyampaikan pesan yang menarik dan bermakna melalui penceritaan audiovisual.',
             'engtextatas' => 'Turning creativity into a medium for delivering captivating and meaningful messages through audiovisual storytelling.',
             'title' => '["Company Profile"]',
             'description' => '["Kami membantu Anda membuat company profile yang profesional dan menarik untuk memperkenalkan perusahaan Anda kepada audiens. Dengan company profile yang baik, Anda dapat meningkatkan kesadaran dan kredibilitas perusahaan Anda"]',
             'engtitle' => '["Company Profile"]',
-            'engdescription' => '["We help you create a professional and attractive company profile to introduce your company to the audience. With a good company profile, you can increase your company awareness and credibility."]'
+            'engdescription' => '["We help you create a professional and attractive company profile to introduce your company to the audience. With a good company profile, you can increase your company awareness and credibility."]',
+            'icon' => '["profesional.png"]',
+            'text' => '["Pengeditan Video"]',
+            'engtext' => '["Video Editing"]',
         ]);
     }
 }

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link href="/assets/images/logo.svg" rel="shortcut icon">
+    <link href="/assets/images/illumax-icon.png" rel="shortcut icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title }}</title>
     <!-- BEGIN: CSS Assets-->

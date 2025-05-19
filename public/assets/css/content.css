@@ -494,6 +494,7 @@ div {}
 }
 
 .link-contact {
+  font-family: 'Actor, sans-serif';
   font-size: 30px;
   margin-right: 30px;
   color: #ffffff;
@@ -665,8 +666,8 @@ a {
 }
 
 .logo-partner {
-  margin-top: 20px;
-  width: 200px;
+  margin-top: 30px;
+  width: 170px;
 }
 
 .whatsapp-float {
@@ -693,9 +694,16 @@ a {
   padding-bottom: 15px;
   padding-top: 10px;
 }
-}
+
 
 .whatsapp-float .btn:hover {
   background-color: #1DA854;
   color: white;
+}
+
+.cover-image-partner {
+  align-content: center;
+  width: 350px;
+  padding: 10px;
+  height: 150px;
 }

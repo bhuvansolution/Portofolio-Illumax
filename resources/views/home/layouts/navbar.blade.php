@@ -15,7 +15,7 @@
                         href="/gallery">Gallery</a></li>
                 <li class="nav-item"><a class="nav-link {{ Request::is('contacts') ? 'active' : '' }}"
                         href="/contacts">Contacts</a></li>
-                <li class="nav-item"><a class="nav-link" href="language">EN</a></li>
+                <li class="nav-item"><a class="nav-link" href="http">EN</a></li>
             </ul>
         </div>
     </div>

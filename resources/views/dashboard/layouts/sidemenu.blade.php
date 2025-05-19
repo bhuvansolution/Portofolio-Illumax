@@ -15,6 +15,13 @@
         </li>
         <li class="side-nav__devider my-6"></li>
         <li>
+            <a href="/dashboard/user-management"
+                class="side-menu {{ Request::is('dashboard/user-management') ? 'side-menu--active' : '' }}">
+                <div class="side-menu__icon"> <i data-lucide="users"></i> </div>
+                <div class="side-menu__title"> User Management </div>
+            </a>
+        </li>
+        <li>
             <a href="javascript:;"
                 class="side-menu {{ Request::is('dashboard/gallerypage*', 'dashboard/portofolio-page*', 'dashboard/aboutus*', 'dashboard/our-partner*', 'dashboard/contact*', 'dashboard/our-project*', 'dashboard/our-service*', 'dashboard/why-choose*') ? 'side-menu--active' : '' }}">
                 <div class="side-menu__icon"> <i data-lucide="layers"></i> </div>
@@ -93,7 +100,20 @@
                 <div class="side-menu__title"> Gallery </div>
             </a>
         </li>
-
+        <li>
+            <a href="/dashboard/artikel"
+                class="side-menu {{ Request::is('dashboard/artikel') ? 'side-menu--active' : '' }}">
+                <div class="side-menu__icon"> <i data-lucide="file-text"></i> </div>
+                <div class="side-menu__title"> Artikel </div>
+            </a>
+        </li>
+        <li>
+            <a href="/dashboard/pesan"
+                class="side-menu {{ Request::is('dashboard/pesan') ? 'side-menu--active' : '' }}">
+                <div class="side-menu__icon"> <i data-lucide="message-square"></i> </div>
+                <div class="side-menu__title"> Pesan </div>
+            </a>
+        </li>
         <li class="side-nav__devider my-6"></li>
     </ul>
 </nav>

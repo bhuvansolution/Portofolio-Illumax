@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(WhyChooseSeeder::class);
         $this->call(GalleryPageSeeder::class);
         $this->call(PortoPageSeeder::class);
+        $this->call(RoleSeeder::class);
     }
 }

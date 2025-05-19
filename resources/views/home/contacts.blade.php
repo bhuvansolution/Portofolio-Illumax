@@ -52,20 +52,56 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5">
                     <div class="contact-we">
-                        <form class="p-3 p-xl-4" method="post">
+                        <form action="/dashboard/pesan" class="p-3 p-xl-4" method="post">
+                            @csrf
                             <h4 class="mb-4" style="font-family: Aldrich, sans-serif;">Concact Us</h4>
-                            <div class="mb-3"><input class="shadow-none form-control" type="text" id="name-1"
-                                    name="name" placeholder="Name"></div>
-                            <div class="mb-3"><input class="shadow-none form-control" type="email" id="email-1"
-                                    name="email" placeholder="Email"></div>
-                            <div class="mb-3"><input class="shadow-none form-control" type="email" id="email-2"
-                                    name="email" placeholder="Phone"></div>
-                            <div class="mb-3"><input class="form-control" type="email" id="email-3" name="email"
-                                    placeholder="Subject"></div>
+                            <div class="mb-3">
+                                <input class="shadow-none form-control" type="text" id="name-1" name="name"
+                                    placeholder="Name">
+                                @error('name')
+                                    <div class="text-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <input class="shadow-none form-control" type="email" id="email-1" name="email"
+                                    placeholder="Email">
+                                @error('email')
+                                    <div class="text-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <input class="shadow-none form-control" type="number" id="phone-1" name="phone"
+                                    placeholder="Phone">
+                                @error('phone')
+                                    <div class="text-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <input class="form-control" type="text" id="email-3" name="subject"
+                                    placeholder="Subject">
+                                @error('subject')
+                                    <div class="text-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
                             <div class="mb-3">
                                 <textarea class="form-control" id="message-1" name="message" rows="6" placeholder="Message"></textarea>
+                                @error('message')
+                                    <div class="text-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
-                            <div><button class="btn d-block w-100 btn-git" type="submit">Send </button></div>
+                            <div>
+                                <button class="btn d-block w-100 btn-git" type="submit">Send </button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -79,7 +115,8 @@
                                 </div>
                                 <div class="px-2">
                                     <h6 class="fw-bold mb-0" style="font-family: Aldrich, sans-serif;">Phone&nbsp;</h6>
-                                    <p class="text-muted mb-0">{{ $contacts->phone }}</p>
+                                    <p class="text-muted mb-0" style="font-family:Inter;">
+                                        {{ $contacts->phone }}</p>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +128,8 @@
                                 </div>
                                 <div class="px-2">
                                     <h6 class="fw-bold mb-0" style="font-family: Aldrich, sans-serif;">Email</h6>
-                                    <p class="text-muted mb-0">{{ $contacts->email }}</p>
+                                    <p class="text-muted mb-0" style="font-family:Inter;">
+                                        {{ $contacts->email }}</p>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +141,8 @@
                                 </div>
                                 <div class="px-2">
                                     <h6 class="fw-bold mb-0" style="font-family: Aldrich, sans-serif;">Whatsapp</h6>
-                                    <p class="text-muted mb-0">{{ $contacts->whatsapp }}</p>
+                                    <p class="text-muted mb-0" style="font-family:Inter;">
+                                        {{ $contacts->whatsapp }}</p>
                                 </div>
                             </div>
                         </div>
@@ -115,7 +154,8 @@
                                 </div>
                                 <div class="px-2">
                                     <h6 class="fw-bold mb-0" style="font-family: Aldrich, sans-serif;">Office</h6>
-                                    <p class="text-muted mb-0">{{ $contacts->office }}</p>
+                                    <p class="text-muted mb-0" style="font-family:Inter;">
+                                        {{ $contacts->office }}</p>
                                 </div>
                             </div>
                         </div>

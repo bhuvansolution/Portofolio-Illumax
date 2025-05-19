@@ -5,12 +5,24 @@
 
 <head>
     <meta charset="utf-8">
-    <link href="/assets/images/logo.svg" rel="shortcut icon">
+    <link href="/assets/images/illumax-icon.png" rel="shortcut icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard | {{ $title }}</title>
     <!-- BEGIN: CSS Assets-->
     <link rel="stylesheet" href="/assets/css/app.css" />
     <!-- END: CSS Assets-->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL2MT0QL26"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZL2MT0QL26');
+    </script>
 </head>
 <!-- END: Head -->
 

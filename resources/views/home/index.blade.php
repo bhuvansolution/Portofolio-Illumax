@@ -57,11 +57,11 @@
         <div class="container-fluid" style="padding-left:0px;padding-right:50px;">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
-                    <div><img class="img-fluid image-about-us1" alt="woman wearing sunglasses"
-                            src="assets/img/photo-1562572159-4efc207f5aff.jpg"></div>
+                    <div><img class="img-fluid image-about-us1" alt="aboutus"
+                            src="/assets/images/aboutus/{{ $aboutus->gambar }}"></div>
                     <div>
-                        <img class="img-fluid image-about-us2" alt="woman posing beside lite window"
-                            src="assets/img/photo-1532800783378-1bed60adaf58.jpg">
+                        <img class="img-fluid image-about-us2" alt="aboutus"
+                            src="/assets/images/aboutus/{{ $aboutus->gambar1 }}">
                     </div>
                 </div>
                 <div
@@ -151,8 +151,11 @@
                     <div class="row gx-2 gy-2 row-cols-1 row-cols-md-2 row-cols-xl-3 photos" data-bss-baguettebox="">
                         @foreach ($partner as $ourpartner)
                             <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 item">
-                                <a href="{{ $ourpartner->url }}" target="_blank"><img class="img-fluid logo-partner"
-                                        src="/assets/images/our-partner/{{ $ourpartner->gambar }}"></a>
+                                <div class="cover-image-partner">
+                                    <a href="{{ $ourpartner->url }}" target="_blank">
+                                        <img class="img-fluid logo-partner"
+                                            src="/assets/images/our-partner/{{ $ourpartner->gambar }}"></a>
+                                </div>
                             </div>
                         @endforeach
                     </div>
@@ -164,8 +167,10 @@
                     <div class="row gx-2 gy-2 row-cols-1 row-cols-md-2 row-cols-xl-3 photos" data-bss-baguettebox="">
                         @foreach ($ourproject as $project)
                             <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3 item">
-                                <a href="{{ $project->url }}" target="_blank"><img class="img-fluid logo-partner"
-                                        src="/assets/images/our-project/{{ $project->gambar }}"></a>
+                                <div class="cover-image-partner">
+                                    <a href="{{ $project->url }}" target="_blank"><img class="img-fluid logo-partner"
+                                            src="/assets/images/our-project/{{ $project->gambar }}"></a>
+                                </div>
                             </div>
                         @endforeach
                     </div>
@@ -186,20 +191,19 @@
             <div class="row w-100">
                 @foreach ($porto as $list)
                     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
-                        <div class="movie-card"><img alt="person holding black dslr camera" class="image-porto"
+                        <div class="movie-card"><img alt="{{ $list->title }}" class="image-porto"
                                 src="/assets/images/portofolio/{{ $list->gambar }}">
                             <div class="card-img-overlay text-center d-flex flex-column justify-content-center align-items-center image-cover-portfolio"
                                 style="background: linear-gradient(7deg, rgba(0,0,0,0.85) 0%, rgba(255,255,255,0.21) 99%);">
-                                <p class="paragraph-portfolio">Lorem Ipsum</p>
+                                <p class="paragraph-portfolio">{{ $list->title }}</p>
                             </div>
-                            <div class="hover-popup">
+                            <div class="hover-popup" data-bs-target="#videoModal-{{ $list->id }}"
+                                data-bs-toggle="modal">
                                 <video autoplay muted width="100%">
                                     <source src="/assets/video/portofolio/{{ $list->video }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
-                                <div class="hover-info"><button class="btn"
-                                        data-bs-target="#videoModal-{{ $list->id }}" data-bs-toggle="modal"><i
-                                            class="far fa-play-circle text-white" style="font-size:20px;"></i></button>
+                                <div class="hover-info">
                                     <h5>{{ $list->title }}</h5>
                                 </div>
                             </div>
@@ -217,7 +221,6 @@
         <div class="modal fade" role="dialog" tabindex="-1" id="videoModal-{{ $modal->id }}">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-
                     <div class="modal-body">
                         {{-- <iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/dRUlWLGumos">
                     </iframe> --}}
