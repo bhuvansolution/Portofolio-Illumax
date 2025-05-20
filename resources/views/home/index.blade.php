@@ -1,24 +1,24 @@
 @push('css')
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Actor&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aldrich&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Devanagari&amp;display=swap">
-    <link rel="stylesheet" href="assets/css/swiper-icons.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/carousel-logo.compiled.css">
-    <link rel="stylesheet" href="assets/css/content.css">
-    <link rel="stylesheet" href="assets/css/Features-Centered-Icons-icons.css">
-    <link rel="stylesheet" href="assets/css/Features-Small-Icons-icons.css">
-    <link rel="stylesheet" href="assets/css/Hero-Carousel-images.css">
-    <link rel="stylesheet" href="assets/css/Lightbox-Gallery-baguetteBox.min.css">
-    <link rel="stylesheet" href="assets/css/logo-carousel.compiled.css">
-    <link rel="stylesheet" href="assets/css/navbar.css">
-    <link rel="stylesheet" href="assets/css/Simple-Slider-swiper-bundle.min-1.css">
-    <link rel="stylesheet" href="assets/css/Simple-Slider-swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
-    <link rel="stylesheet" href="assets/css/video.css">
+    <link rel="stylesheet" href="/assets/css/swiper-icons.css">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/css/carousel-logo.compiled.css">
+    <link rel="stylesheet" href="/assets/css/content.css">
+    <link rel="stylesheet" href="/assets/css/Features-Centered-Icons-icons.css">
+    <link rel="stylesheet" href="/assets/css/Features-Small-Icons-icons.css">
+    <link rel="stylesheet" href="/assets/css/Hero-Carousel-images.css">
+    <link rel="stylesheet" href="/assets/css/Lightbox-Gallery-baguetteBox.min.css">
+    <link rel="stylesheet" href="/assets/css/logo-carousel.compiled.css">
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+    <link rel="stylesheet" href="/assets/css/Simple-Slider-swiper-bundle.min-1.css">
+    <link rel="stylesheet" href="/assets/css/Simple-Slider-swiper-bundle.min.css">
+    <link rel="stylesheet" href="/assets/css/Simple-Slider.css">
+    <link rel="stylesheet" href="/assets/css/video.css">
 @endpush
 @extends('home.layouts.app')
 @section('container')
@@ -26,7 +26,7 @@
     <div class="simple-slider position-relative">
         <!-- Teks Tetap di Atas -->
         <div class="text-center text-white slider-title position-absolute w-100" style="z-index: 10; top: 30%;">
-            <h1 class="fw-bold" style="text-align:left;">Mewujudkan Inspirasi Melalui Teknologi Audio-Visual.</h1>
+            <h1 class="fw-bold" style="text-align:left;">{{ $banner->title }}</h1>
             <p style="text-align:left;">Temukan informasi terbaik di sini</p>
         </div>
 

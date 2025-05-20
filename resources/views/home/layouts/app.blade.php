@@ -33,7 +33,7 @@
     @include('home.layouts.navbar')
 
     <div class="whatsapp-float">
-        <a href="https://wa.me/628123456789" target="_blank" class="btn btn-lg">
+        <a href="https://wa.me/{{ $contacts->whatsapp }}" target="_blank" class="btn btn-lg">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>

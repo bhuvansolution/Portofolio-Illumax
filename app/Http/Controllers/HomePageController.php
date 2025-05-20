@@ -24,6 +24,7 @@ class HomePageController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required',
+            'engtitle' => 'required',
             'gambar' => 'nullable|array', // Pastikan gambar berupa array
             'gambar.*' => 'image|mimes:jpg,jpeg,png,gif|max:5048', // Validasi untuk setiap file
         ]);
