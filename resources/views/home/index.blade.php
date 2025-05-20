@@ -26,7 +26,7 @@
     <div class="simple-slider position-relative">
         <!-- Teks Tetap di Atas -->
         <div class="text-center text-white slider-title position-absolute w-100" style="z-index: 10; top: 30%;">
-            <h1 class="fw-bold" style="text-align:left;">Selamat Datang di Website Kami</h1>
+            <h1 class="fw-bold" style="text-align:left;">Mewujudkan Inspirasi Melalui Teknologi Audio-Visual.</h1>
             <p style="text-align:left;">Temukan informasi terbaik di sini</p>
         </div>
 

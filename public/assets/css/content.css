@@ -680,8 +680,8 @@ a {
 
 .whatsapp-float .btn {
   width: 50px;
-  background-color: #25D366;
-  color: white;
+  background-color: #ffffff;
+  color: #c39833;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   border-radius: 100%;
   -webkit-border-radius: 100%;
@@ -697,8 +697,8 @@ a {
 
 
 .whatsapp-float .btn:hover {
-  background-color: #1DA854;
-  color: white;
+  background-color: #ffffff;
+  color: #d2a439;
 }
 
 .cover-image-partner {
