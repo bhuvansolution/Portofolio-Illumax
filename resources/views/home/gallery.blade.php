@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aldrich&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Devanagari&amp;display=swap">
     <link rel="stylesheet" href="assets/css/swiper-icons.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/css/carousel-logo.compiled.css">
     <link rel="stylesheet" href="assets/css/content.css">
     <link rel="stylesheet" href="assets/css/Features-Centered-Icons-icons.css">
@@ -13,7 +14,6 @@
     <link rel="stylesheet" href="assets/css/Hero-Carousel-images.css">
     <link rel="stylesheet" href="assets/css/Lightbox-Gallery-baguetteBox.min.css">
     <link rel="stylesheet" href="assets/css/logo-carousel.compiled.css">
-    <link rel="stylesheet" href="assets/css/multiple-item-carousel-slider.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/Simple-Slider-swiper-bundle.min-1.css">
     <link rel="stylesheet" href="assets/css/Simple-Slider-swiper-bundle.min.css">
