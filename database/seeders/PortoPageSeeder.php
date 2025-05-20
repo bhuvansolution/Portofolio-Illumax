@@ -14,7 +14,7 @@ class PortoPageSeeder extends Seeder
     public function run(): void
     {
         PortofolioPage::updateOrCreate([
-            'gambar' => 'portopage.jpg',
+            'gambar' => 'portopage.jpeg',
             'gambar1' => 'portopage1.jpg',
             'textatas' => 'Menggunakan kreativitas sebagai jembatan untuk berbagi kisah-kisah indah dan berdampak melalui visual dan suara.',
             'engtextatas' => 'Using creativity as a bridge to share beautiful and impactful stories through visual and sound.',

@@ -16,7 +16,7 @@ class HomepageSeeder extends Seeder
         HomePage::firstOrCreate([], [
             'title' => 'abcd',
             'engtitle' => 'engtitle',
-            'gambar' => '["banner-68203a3b174f6.jpg","banner-68203a3b17d7b.jpg"]'
+            'gambar' => '["banner-6823f5ef4f982.jpg","banner-6823f5ef4ffd6.jpg","banner-68294371d06cb.jpeg","banner-68294371d08fa.jpeg","banner-68294371d0466.jpeg"]'
         ]);
     }
 }

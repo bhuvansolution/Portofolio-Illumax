@@ -14,8 +14,8 @@ class GalleryPageSeeder extends Seeder
     public function run(): void
     {
         GalleryPage::updateOrCreate([
-            'gambar' => 'gallerypage.jpg',
-            'gambar1' => 'gallerypage1.jpg',
+            'gambar' => 'gallerypage.jpeg',
+            'gambar1' => 'gallerypage1.jpeg',
             'textatas' => 'Kami percaya bahwa kreativitas, jika dipadukan dengan cerita audiovisual, menjadi bahasa universal emosi dan dampak',
             'engtextatas' => 'We believe that creativity, when paired with audiovisual storytelling, becomes a universal language of emotion and impactx',
             'textbawah' => 'Memanfaatkan kreativitas untuk menyampaikan pesan yang berdampak dan menarik melalui kekuatan penceritaan audio-visual',

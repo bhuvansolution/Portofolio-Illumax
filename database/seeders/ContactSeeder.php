@@ -14,7 +14,7 @@ class ContactSeeder extends Seeder
     public function run(): void
     {
         Contact::updateOrCreate([
-            'gambar' => 'contact.jpg',
+            'gambar' => 'contact.jpeg',
             'gambar1' => 'contact1.jpg',
             'whatsapp' => '123445',
             'email' => 'Test@gmail.com',

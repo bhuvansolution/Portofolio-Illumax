@@ -22,10 +22,10 @@ class AboutSeeder extends Seeder
             'engjudul' => 'Behind The Lens',
             'engdescription' => '<p>llumax is a production house under the umbrella of PT. Rinjani Astha Kreatif, which was founded by three professionals and competent in the creative world of audio visual.<br><br>Commitment, flexibility, and taste are used as the foundation for working on a work, which makes Illumax responsible, has the ability to adapt to meet expectations in a project, and does everything with taste so that the message conveyed in a work, product, or result is more alive so that it is quickly understood by the audience.<br><br>We have professional, competent and highly credible staff in working on a project.</p>',
             'engtextbawah' => 'Harnessing creativity to deliver impactful and engaging messages through the power of audio-visual storytelling',
-            'banneratas' => 'banneratas.jpg',
+            'banneratas' => 'banneratas.jpeg',
             'gambar1' => 'about-us1.jpg',
             'gambar' => 'about-us.jpg',
-            'bannerbawah' => 'bannerbawah.jpg',
+            'bannerbawah' => 'bannerbawah.jpeg',
         ]);
     }
 }
