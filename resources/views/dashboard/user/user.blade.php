@@ -145,7 +145,7 @@
                         </div>
                         <div class="px-5 pb-8 text-center">
 
-                            <form action="/dashboard/our-users/{{ $as->id }}" method="post">
+                            <form action="/dashboard/user-management/{{ $as->id }}" method="post">
                                 @method('DELETE')
                                 @csrf
                                 <button type="button" data-tw-dismiss="modal"
