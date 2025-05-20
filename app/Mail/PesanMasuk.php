@@ -20,11 +20,6 @@ class PesanMasuk extends Mailable
     {
         $this->data = $data;
     }
-    public function build()
-    {
-        return $this->subject('Pesan Baru dari ' . $this->data['name'])
-            ->view('emails.pesan-masuk');
-    }
 
     /**
      * Get the message envelope.
@@ -32,7 +27,7 @@ class PesanMasuk extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Pesan Masuk',
+            subject: 'Pesan Baru dari ' . $this->data['name'],
         );
     }
 
@@ -42,7 +37,7 @@ class PesanMasuk extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.pesan-masuk',
         );
     }
 

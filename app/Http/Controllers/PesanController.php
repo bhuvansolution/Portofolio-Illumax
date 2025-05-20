@@ -35,7 +35,7 @@ class PesanController extends Controller
         try {
             Pesan::create($validatedData);
             // Kirim email ke Anda
-            Mail::to('rianrahman8243@gmail.com')->send(new PesanMasuk($validatedData));
+            Mail::to('illumaxid@gmail.com')->send(new PesanMasuk($validatedData));
 
             return redirect()->back()->with('success', 'Berhasil di Update');
         } catch (\Exception $e) {
