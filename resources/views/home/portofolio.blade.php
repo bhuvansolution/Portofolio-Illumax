@@ -4,7 +4,6 @@
         href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Actor&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aldrich&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Devanagari&amp;display=swap">
     <link rel="stylesheet" href="/assets/css/swiper-icons.css">
     <link rel="stylesheet" href="/assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="/assets/css/carousel-logo.compiled.css">
@@ -125,7 +124,8 @@
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
                     <h1 class="display-5 text-uppercase text-start mt-5"
-                        style="font-family: Aldrich, sans-serif;font-size: 40px;"><strong>{{ $news->title }}</strong></h1>
+                        style="font-family: Aldrich, sans-serif;font-size: 40px;"><strong>{{ $news->title }}</strong>
+                    </h1>
                     <p class="mt-5">{!! strip_tags($news->description, '<br>') !!}</p>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6 d-xl-flex align-items-xl-center">
