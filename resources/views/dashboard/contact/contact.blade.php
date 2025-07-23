@@ -87,8 +87,7 @@
                                         </div>
                                         <div class="w-full mt-3 xl:mt-0 flex-1">
                                             <input id="phone" name="phone" type="number" class="form-control"
-                                                placeholder="628123456789" maxlength="13"
-                                                value="{{ old('phone', $contact->phone) }}">
+                                                placeholder="628123456789" value="{{ old('phone', $contact->phone) }}">
                                             @error('phone')
                                                 <div class="text-danger form-help text-left">
                                                     {{ $message }}
@@ -111,7 +110,7 @@
                                         </div>
                                         <div class="w-full mt-3 xl:mt-0 flex-1">
                                             <input id="whatsapp" name="whatsapp" type="number" class="form-control"
-                                                placeholder="628123456789" maxlength="13"
+                                                placeholder="628123456789"
                                                 value="{{ old('whatsapp', $contact->whatsapp) }}">
                                             @error('whatsapp')
                                                 <div class="text-danger form-help text-left">

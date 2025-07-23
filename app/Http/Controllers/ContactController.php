@@ -73,10 +73,7 @@ class ContactController extends Controller
 
             return redirect('/dashboard/contact')->with('success', 'Berhasil di Update');
         } catch (\Exception $e) {
-            // Hapus file yang sudah diupload jika terjadi error
-            if (file_exists(public_path('assets/images/contact/' . $nama_gambar))) {
-                unlink(public_path('assets/images/contact/' . $nama_gambar));
-            }
+
             return redirect('/dashboard/contact')->with('error', 'Terjadi kesalahan, Silahkan coba lagi.');
         }
     }

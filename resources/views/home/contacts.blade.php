@@ -160,8 +160,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="ratio ratio-16x9 mt-5"><iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.368631370524!2d106.68895767475173!3d-6.34628789364354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e5a6e26dc3cd%3A0xccd6344b8021119d!2sUniversitas%20Pamulang%20Kampus%202%20(UNPAM%20Viktor)!5e0!3m2!1sid!2sid!4v1746859764844!5m2!1sid!2sid"></iframe>
+                    <div class="ratio ratio-16x9 mt-5"><iframe src="{{ $contacts->maps }}"></iframe>
                     </div>
                 </div>
             </div>

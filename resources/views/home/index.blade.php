@@ -199,7 +199,7 @@
                             </div>
                             <div class="hover-popup" data-bs-target="#videoModal-{{ $list->id }}"
                                 data-bs-toggle="modal">
-                                <video autoplay muted width="100%">
+                                <video muted width="100%">
                                     <source src="/assets/video/portofolio/{{ $list->video }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>

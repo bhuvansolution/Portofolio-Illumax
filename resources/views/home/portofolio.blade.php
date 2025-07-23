@@ -58,7 +58,7 @@
                             </div>
                             <div class="hover-popup" data-bs-target="#videoModal-{{ $list->id }}"
                                 data-bs-toggle="modal">
-                                <video autoplay muted width="100%">
+                                <video muted width="100%">
                                     <source src="/assets/video/portofolio/{{ $list->video }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
@@ -119,42 +119,52 @@
         </div>
     </section>
     <header class="bg-bottom-about-us"
-        style="background: linear-gradient(160deg, rgb(17,17,17) 0%, rgba(18,18,18,0.84) 62%, rgba(0,0,0,0.74)), url(/assets/images/portopage/{{ $portopage->gambar1 }}) center / cover no-repeat;">
+        style="background: linear-gradient(160deg, rgb(17,17,17) 0%, rgba(18,18,18,0.84) 62%, rgba(0,0,0,0.74)), url(/assets/images/portopage/{{ optional($portopage)->gambar1 ?? 'default.jpg' }}) center / cover no-repeat;">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6">
                     <h1 class="display-5 text-uppercase text-start mt-5"
-                        style="font-family: Aldrich, sans-serif;font-size: 40px;"><strong>{{ $news->title }}</strong>
+                        style="font-family: Aldrich, sans-serif;font-size: 40px;">
+                        <strong>{{ optional($news)->title ?? 'Belum ada berita terbaru' }}</strong>
                     </h1>
-                    <p class="mt-5">{!! strip_tags($news->description, '<br>') !!}</p>
+                    <p class="mt-5">
+                        {!! strip_tags(optional($news)->description ?? '', '<br>') !!}
+                    </p>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-6 d-xl-flex align-items-xl-center">
-                    <div class="row">
-                        <div class="col-sm-12  mt-4">
-                            <div class="movie-card"><img alt="{{ $news->title }}" class="image-porto"
-                                    src="/assets/images/portofolio/{{ $news->gambar }}">
-                                <div class="card-img-overlay text-center d-flex flex-column justify-content-center align-items-center image-cover-portfolio"
-                                    style="background: linear-gradient(7deg, rgba(0,0,0,0.85) 0%, rgba(255,255,255,0.21) 99%);">
-                                    <p class="paragraph-portfolio">{{ $news->title }}</p>
-                                </div>
-                                <div class="hover-popup" data-bs-target="#videoModal-{{ $news->id }}"
-                                    data-bs-toggle="modal">
-                                    <video autoplay muted width="100%">
-                                        <source src="/assets/video/portofolio/{{ $news->video }}" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <div class="hover-info">
-                                        <h5>{{ $news->title }}</h5>
+                    @if ($news)
+                        <div class="row">
+                            <div class="col-sm-12 mt-4">
+                                <div class="movie-card">
+                                    <img alt="{{ $news->title }}" class="image-porto"
+                                        src="/assets/images/portofolio/{{ $news->gambar }}">
+                                    <div class="card-img-overlay text-center d-flex flex-column justify-content-center align-items-center image-cover-portfolio"
+                                        style="background: linear-gradient(7deg, rgba(0,0,0,0.85) 0%, rgba(255,255,255,0.21) 99%);">
+                                        <p class="paragraph-portfolio">{{ $news->title }}</p>
+                                    </div>
+                                    <div class="hover-popup" data-bs-target="#videoModal-{{ $news->id }}"
+                                        data-bs-toggle="modal">
+                                        <video muted width="100%">
+                                            <source src="/assets/video/portofolio/{{ $news->video }}" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                        <div class="hover-info">
+                                            <h5>{{ $news->title }}</h5>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @else
+                        <div class="text-center text-white mt-5">
+                            <p>Belum ada portofolio terbaru yang ditampilkan.</p>
+                        </div>
+                    @endif
                 </div>
-
             </div>
         </div>
     </header>
+
     @foreach ($porto as $modal)
         <div class="modal fade" role="dialog" tabindex="-1" id="videoModal-{{ $modal->id }}">
             <div class="modal-dialog" role="document">

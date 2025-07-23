@@ -71,7 +71,7 @@ class OurPortofolioController extends Controller
             'title' => 'required',
             'slug' => 'required|unique:our_portofolios',
             'gambar' => 'required|image|mimes:jpg,png,jpeg,webp|max:5120',
-            'video' => 'required|mimes:mp4,mov,ogg,qt,webm|max:51200',
+            'video' => 'required|mimes:mp4,mov,ogg,qt,webm|max:307200',
             'description' => 'required',
             'status' => 'required|in:Draft,Publish',
         ]);

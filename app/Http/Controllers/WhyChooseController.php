@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\WhyChoose;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class WhyChooseController extends Controller
 {
@@ -37,28 +38,60 @@ class WhyChooseController extends Controller
         ]);
 
         $whyChoose = WhyChoose::findOrFail($id);
+        $oldgambars = json_decode($whyChoose->gambar, true) ?? [];
+        $newgambars = $oldgambars;
 
-        // Ambil gambar lama dari database
-        $oldgambar = $whyChoose->gambar ? json_decode($whyChoose->gambar, true) : [];
-
-        // Proses upload gambar baru
-        $newgambar = [];
+        // Proses upload icon baru dan hapus icon lama
         if ($request->hasFile('gambar')) {
-            foreach ($request->file('gambar') as $gambar) {
-                if ($gambar->isValid()) {
-                    $filename = time() . '_' . $gambar->getClientOriginalName();
-                    $gambar->move(public_path('assets/images/whychoose'), $filename);
-                    $newgambar[] = $filename;
+            foreach ($request->file('gambar') as $index => $gambarFile) {
+                if ($gambarFile->isValid()) {
+                    if (isset($oldgambars[$index])) {
+                        $oldPath = public_path('assets/images/whychoose/' . $oldgambars[$index]);
+                        if (file_exists($oldPath)) {
+                            File::delete($oldPath);
+                        }
+                        unset($newgambars[$index]);
+                    }
+
+                    $newFileName = time() . '_' . uniqid() . '.' . $gambarFile->getClientOriginalExtension();
+                    $gambarFile->move(public_path('assets/images/whychoose'), $newFileName);
+                    $newgambars[$index] = $newFileName;
                 }
             }
         }
 
-        // Gabungkan gambar lama dan baru
-        $allImages = array_merge($oldgambar, $newgambar);
-        $validatedData['gambar'] = json_encode($allImages);
+        // Hapus icon yang dikosongkan
+        if ($request->has('gambar')) {
+            foreach ($request->gambar as $index => $value) {
+                if (!$request->hasFile("gambar.$index")) {
+                    unset($newgambars[$index]);
+                }
+            }
+        }
+        // Sinkronisasi ICON dan TEXT
+        $texts = $request->title ?? [];
+        $gambars = $newgambars;
+        $filteredTexts = [];
+        $filteredgambars = [];
+
+        foreach ($texts as $index => $textValue) {
+            $textValue = trim($textValue);
+            if ($textValue !== '' && isset($gambars[$index]) && $gambars[$index] !== '') {
+                $filteredTexts[] = $textValue;
+                $filteredgambars[] = $gambars[$index];
+            } elseif (isset($gambars[$index])) {
+                // Jika gambar ada tapi text kosong, hapus gambar
+                $oldPath = public_path('assets/images/whychoose/' . $gambars[$index]);
+                if (file_exists($oldPath)) {
+                    File::delete($oldPath);
+                }
+            }
+        }
+
+        $validatedData['gambar'] = json_encode(array_values($filteredgambars));
+        $validatedData['title'] = json_encode(array_values($filteredTexts));
 
         // Filter data lainnya
-        $validatedData['title'] = json_encode(array_values(array_filter($request->title, fn($v) => !is_null($v) && $v !== '')));
         $validatedData['description'] = json_encode(array_values(array_filter($request->description, fn($v) => !is_null($v) && $v !== '')));
         $validatedData['engtitle'] = json_encode(array_values(array_filter($request->engtitle, fn($v) => !is_null($v) && $v !== '')));
         $validatedData['engdescription'] = json_encode(array_values(array_filter($request->engdescription, fn($v) => !is_null($v) && $v !== '')));
